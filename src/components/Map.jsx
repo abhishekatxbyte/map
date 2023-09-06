@@ -237,6 +237,7 @@ const Map = () => {
 
         {/* Filters */}
         <Controllers
+        activeMarker={activeMarker}
           selectedRadius={selectedRadius}
           handleFilterClick={handleFilterClick}
           handleRadiusChange={handleRadiusChange}

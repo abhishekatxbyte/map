@@ -7,6 +7,7 @@ const Controllers = ({
   selectedRadius,
   handleRadiusChange,
   handleFilterClick,
+  activeMarker
 }) => {
   return (
     <div className={style.filters}>
@@ -18,7 +19,12 @@ const Controllers = ({
             name="radius"
             value="1000"
             onChange={() => handleRadiusChange(1000)}
-            checked={selectedRadius === 1000}
+            disabled={activeMarker ? false : true}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : 'default'
+
+            }}
+            checked={activeMarker?selectedRadius === 1000 : null}
           />
           <label htmlFor="vehicle1">Tear 1 = 1 KM</label>
         </div>
@@ -27,9 +33,14 @@ const Controllers = ({
             type="radio"
             id="vehicle2"
             name="radius"
-            value="2000"
+            value="2000" disabled={activeMarker ? false : true}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : 'default'
+
+            }}
             onChange={() => handleRadiusChange(2000)}
-            checked={selectedRadius === 2000}
+            checked={activeMarker?selectedRadius === 2000 : null}
+
           />
           <label htmlFor="vehicle2">Tear 2 = 2 KM</label>
         </div>
@@ -38,10 +49,15 @@ const Controllers = ({
           <input
             type="radio"
             id="vehicle3"
-            name="radius"
+            name="radius" disabled={activeMarker ? false : true}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : 'default'
+
+            }}
             value="3000"
             onChange={() => handleRadiusChange(3000)}
-            checked={selectedRadius === 3000}
+            checked={activeMarker?selectedRadius === 3000 : null}
+
           />
           <label htmlFor="vehicle3">Tear 3 = 3 KM</label>
         </div>
@@ -53,7 +69,11 @@ const Controllers = ({
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="schools"
+              value="schools" disabled={activeMarker ? false : true}
+              style={{
+                cursor: !activeMarker ? "not-allowed" : 'default'
+
+              }}
               onChange={(e) => handleFilterClick(e)}
             />
             <label htmlFor="Educational">Educational Institutions</label>
@@ -64,7 +84,11 @@ const Controllers = ({
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="offices"
+              value="offices" disabled={activeMarker ? false : true}
+              style={{
+                cursor: !activeMarker ? "not-allowed" : 'default'
+
+              }}
               onChange={(e) => handleFilterClick(e)}
             />
             <label htmlFor="Work"> Work Places</label>
@@ -76,7 +100,11 @@ const Controllers = ({
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="entertainment"
+              value="entertainment" disabled={activeMarker ? false : true}
+              style={{
+                cursor: !activeMarker ? "not-allowed" : 'default'
+
+              }}
               onChange={(e) => handleFilterClick(e)}
             />
             <label htmlFor="Entertainment"> Entertainment</label>
