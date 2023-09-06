@@ -53,7 +53,7 @@ const Controllers = ({
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="Educational"
+              value="schools"
               onChange={(e) => handleFilterClick(e)}
             />
             <label htmlFor="Educational">Educational Institutions</label>
@@ -64,7 +64,7 @@ const Controllers = ({
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="Work"
+              value="offices"
               onChange={(e) => handleFilterClick(e)}
             />
             <label htmlFor="Work"> Work Places</label>
@@ -76,7 +76,7 @@ const Controllers = ({
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="Entertainment"
+              value="entertainment"
               onChange={(e) => handleFilterClick(e)}
             />
             <label htmlFor="Entertainment"> Entertainment</label>

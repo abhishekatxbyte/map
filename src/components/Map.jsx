@@ -11,6 +11,7 @@ import InfoWindows from "./InfoWindows";
 
 const Map = () => {
   // State variables
+  
   const [map, setMap] = useState(null);
   const [activeMarker, setActiveMarker] = useState(null);
   const [selectedRadius, setSelectedRadius] = useState(null);
@@ -19,9 +20,9 @@ const Map = () => {
 
   const [catData, setCatData] = useState(data);
   const [check, setCheck] = useState({
-    Educational: false,
-    Entertainment: false,
-    Work: false,
+    schools: false,
+    entertainment: false,
+    offices: false,
   });
   const [mapCenter, setMapCenter] = useState({
     lat: 17.464809,
@@ -29,17 +30,17 @@ const Map = () => {
   });
 
   // Prepare data for markers
-  const masterStop = data.filter((data) => data.master === true);
+  const masterStop = data.filter((data) => data.restaurant_id? true : false);
   const tourStops = masterStop.map((item, index) => ({
     position: {
-      lat: parseFloat(item.geometry.coordinates[1]),
-      lng: parseFloat(item.geometry.coordinates[0]),
+      lat: parseFloat(item.latitude),
+      lng: parseFloat(item.longitude),
     },
-    title: item.name,
-    address: item.address,
-    url: item.url,
-    cat: item.categories,
-    master: item.master,
+    title: item.Name,
+    address: item.Full_Address,
+    url: item.URL,
+    cat: item.filter_category,
+    master: item.restaurant_id? true : false,
   }));
   function haversine(lat1, lon1, lat2, lon2) {
     const toRadians = (degrees) => (degrees * Math.PI) / 180;
@@ -65,8 +66,8 @@ const Map = () => {
       const distance = haversine(
         activeMarker.position.lat,
         activeMarker.position.lng,
-        marker.geometry.coordinates[1],
-        marker.geometry.coordinates[0]
+        marker.latitude,
+        marker.longitude
       );
       return distance <= selectedRadius && !marker.master;
 
@@ -75,8 +76,8 @@ const Map = () => {
       const distance = haversine(
         lastActiveMarkerPosition.lat,
         lastActiveMarkerPosition.lng,
-        marker.geometry.coordinates[1],
-        marker.geometry.coordinates[0]
+        marker.latitude,
+        marker.longitude
       );
       return distance <= selectedRadius && !marker.master;
     }
@@ -84,13 +85,13 @@ const Map = () => {
   });
   const nearByStop = filteredMarkers.map((item, index) => ({
     position: {
-      lat: parseFloat(item.geometry.coordinates[1]),
-      lng: parseFloat(item.geometry.coordinates[0]),
+      lat: parseFloat(item.latitude),
+      lng: parseFloat(item.longitude),
     },
-    title: item.name,
-    address: item.address,
-    url: item.url,
-    cat: item.categories,
+    title: item.Name,
+    address: item.Full_Address,
+    url: item.URL,
+    cat: item.filter_category,
     master: item.master,
   }));
 
@@ -102,7 +103,6 @@ const Map = () => {
   const handleMarkerClick = (marker) => {
     setLastActiveMarkerPosition(marker.position);
     setActiveMarker(marker);
-    console.log(marker);
   };
 
   // Close InfoWindow without clearing the selectedRadius
@@ -121,7 +121,6 @@ const Map = () => {
   // Filter click handler
   const handleFilterClick = (e) => {
     const key = e.target.value;
-
     // Create a copy of the previous check state
     const updatedCheck = { ...check };
     updatedCheck[key] = e.target.checked;
@@ -133,7 +132,7 @@ const Map = () => {
 
     // Filter the data based on selected categories using catData
     let filteredData = data.filter((item) => {
-      if (selectedCategories.includes(item.categories)) {
+      if (selectedCategories.includes(item.filter_category)) {
         return true;
       }
       return false;
@@ -175,11 +174,11 @@ const Map = () => {
               url:
                 stop.cat === "restaurants"
                   ? restaurants
-                  : stop.cat === "Entertainment"
+                  : stop.cat === "entertainment"
                   ? Entertainment
-                  : stop.cat === "Work"
+                  : stop.cat === "offices"
                   ? Work
-                  : stop.cat === "Educational"
+                  : stop.cat === "schools"
                   ? Educational
                   : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
@@ -213,11 +212,11 @@ const Map = () => {
               url:
                 stop.cat === "restaurants"
                   ? restaurants
-                  : stop.cat === "Entertainment"
+                  : stop.cat === "entertainment"
                   ? Entertainment
-                  : stop.cat === "Work"
+                  : stop.cat === "offices"
                   ? Work
-                  : stop.cat === "Educational"
+                  : stop.cat === "schools"
                   ? Educational
                   : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
