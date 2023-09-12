@@ -15,6 +15,54 @@ const Controllers = ({
         <div className={style.tears}>
           <input
             type="radio"
+            name="radius"
+            value="500"
+            onChange={() => handleRadiusChange(500)}
+            disabled={activeMarker ? false : true}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : 'default'
+
+            }}
+            checked={activeMarker ? selectedRadius === 500 : null}
+          />
+          <label htmlFor="vehicle1">Tear 1 = 500 mts</label>
+        </div>
+        <div className={style.tears}>
+          <input
+            type="radio"
+            name="radius"
+            value="700" disabled={activeMarker ? false : true}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : 'default'
+
+            }}
+            onChange={() => handleRadiusChange(700)}
+            checked={activeMarker ? selectedRadius === 700 : null}
+
+          />
+          <label htmlFor="vehicle2">Tear 2 = 700 mts</label>
+        </div>
+
+        <div className={style.tears}>
+          <input
+            type="radio"
+            name="radius" disabled={activeMarker ? false : true}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : 'default'
+
+            }}
+            value="900"
+            onChange={() => handleRadiusChange(900)}
+            checked={activeMarker ? selectedRadius === 900 : null}
+
+          />
+          <label htmlFor="vehicle3">Tear 3 = 900 mts</label>
+        </div>
+      </div>
+      <div className={style.tearFilter}>
+        <div className={style.tears}>
+          <input
+            type="radio"
             id="vehicle1"
             name="radius"
             value="1000"
@@ -24,7 +72,7 @@ const Controllers = ({
               cursor: !activeMarker ? "not-allowed" : 'default'
 
             }}
-            checked={activeMarker?selectedRadius === 1000 : null}
+            checked={activeMarker ? selectedRadius === 1000 : null}
           />
           <label htmlFor="vehicle1">Tear 1 = 1 KM</label>
         </div>
@@ -39,7 +87,7 @@ const Controllers = ({
 
             }}
             onChange={() => handleRadiusChange(2000)}
-            checked={activeMarker?selectedRadius === 2000 : null}
+            checked={activeMarker ? selectedRadius === 2000 : null}
 
           />
           <label htmlFor="vehicle2">Tear 2 = 2 KM</label>
@@ -56,13 +104,12 @@ const Controllers = ({
             }}
             value="3000"
             onChange={() => handleRadiusChange(3000)}
-            checked={activeMarker?selectedRadius === 3000 : null}
+            checked={activeMarker ? selectedRadius === 3000 : null}
 
           />
           <label htmlFor="vehicle3">Tear 3 = 3 KM</label>
         </div>
       </div>
-
       <div className={style.placeFilter}>
         <div className={style.places}>
           <img src={Educational} className={style.marker} />

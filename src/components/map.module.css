@@ -1,11 +1,12 @@
-.filters{
+.filters {
   position: absolute;
   bottom: 3%;
   right: 5%;
   display: flex;
   gap: 1em;
 }
-.tearFilter{
+
+.tearFilter {
   background-color: white;
   padding: 1em;
   border-radius: 1em;
@@ -15,7 +16,8 @@
   justify-content: center;
   flex-direction: column;
 }
-.placeFilter{
+
+.placeFilter {
   background-color: white;
   padding: 1em;
   display: flex;
@@ -26,28 +28,44 @@
   border-radius: 1em;
 
 }
+
 /* markers */
-.marker{
-width: 25px;
+.marker {
+  width: 25px;
 }
 
-.places{
+.places {
   display: flex;
   gap: 0.5em;
 }
-.tears{
+
+.tears {
   display: flex;
   gap: 0.5em;
 }
-.tears input{
-  zoom:1.7
+
+.tears input {
+  zoom: 1.7
 }
-.filter{
+
+.filter {
   display: flex;
   gap: 0.5em;
   align-items: center;
 }
-.filter input{
+
+.filter input {
   zoom: 1.7;
   background-color: black;
+}
+
+.custom-tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+  /* Hide the tooltip by default */
+  z-index: 1000;
+  /* Ensure it appears above markers */
 }

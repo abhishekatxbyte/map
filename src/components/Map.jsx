@@ -11,10 +11,12 @@ import InfoWindows from "./InfoWindows";
 
 const Map = () => {
   // State variables
-  
+
   const [map, setMap] = useState(null);
   const [activeMarker, setActiveMarker] = useState(null);
+
   const [selectedRadius, setSelectedRadius] = useState(null);
+  const [circles, setCircles] = useState([]);
   const [lastActiveMarkerPosition, setLastActiveMarkerPosition] =
     useState(null);
 
@@ -30,7 +32,7 @@ const Map = () => {
   });
 
   // Prepare data for markers
-  const masterStop = data.filter((data) => data.restaurant_id? true : false);
+  const masterStop = data.filter((data) => data.restaurant_id ? true : false);
   const tourStops = masterStop.map((item, index) => ({
     position: {
       lat: parseFloat(item.latitude),
@@ -39,8 +41,10 @@ const Map = () => {
     title: item.Name,
     address: item.Full_Address,
     url: item.URL,
+    cost: item["Cost for two"] ? item["Cost for two"] : '',
     cat: item.filter_category,
-    master: item.restaurant_id? true : false,
+    cuisine:item.Cuisine,
+    master: item.restaurant_id ? true : false,
   }));
   function haversine(lat1, lon1, lat2, lon2) {
     const toRadians = (degrees) => (degrees * Math.PI) / 180;
@@ -115,7 +119,51 @@ const Map = () => {
 
   // Radius change handler
   const handleRadiusChange = (value) => {
+    // Update the selected radius
     setSelectedRadius(value);
+
+    // Define the tear values
+    const tearValues = [500, 700, 900, 1000, 2000, 3000];
+
+    // Find the index of the selected tear value
+    const selectedIndex = tearValues.indexOf(parseFloat(value));
+
+    // Calculate the number of circles based on the selected index
+    const numberOfCircles = selectedIndex + 1;
+
+    // Create an array to hold the Circle components
+    const newCircles = [];
+
+    // Generate Circle components and add them to the array
+    const circleColors = [
+      { strokeColor: "#ff0000", fillColor: "#FFf000" }, // Circle 1 colors
+      { strokeColor: "#ff0000", fillColor: "#FFe000" }, // Circle 2 colors
+      { strokeColor: "#ff0000", fillColor: "#FFd000" }, // Circle 3 colors
+      { strokeColor: "#ff0000", fillColor: "#FFf000" }, // Circle 1 colors
+      { strokeColor: "#ff0000", fillColor: "#FFe000" }, // Circle 2 colors
+      { strokeColor: "#ff0000", fillColor: "#FFd000" }, // Circle 3 colors
+      // Add more colors as needed
+    ];
+
+    // Generate Circle components and add them to the array
+    for (let i = 0; i < numberOfCircles; i++) {
+      newCircles.push(
+        <Circle
+          key={i}
+          center={activeMarker ? activeMarker.position : lastActiveMarkerPosition}
+          radius={tearValues[i]} // Use the tear values
+          options={{
+            strokeColor: circleColors[i].strokeColor, // Set stroke color
+            strokeOpacity: 0.8,
+            strokeWeight: 1,
+            fillColor: circleColors[i].fillColor, // Set fill color
+            fillOpacity: 0.15,
+          }}
+        />
+      );
+    }
+    // Update the state to render the circles
+    setCircles(newCircles);
   };
 
   // Filter click handler
@@ -147,7 +195,7 @@ const Map = () => {
     setCheck(updatedCheck);
     setCatData(filteredData);
   };
-
+  console.log(activeMarker)
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMap
@@ -175,12 +223,12 @@ const Map = () => {
                 stop.cat === "restaurants"
                   ? restaurants
                   : stop.cat === "entertainment"
-                  ? Entertainment
-                  : stop.cat === "offices"
-                  ? Work
-                  : stop.cat === "schools"
-                  ? Educational
-                  : restaurants, // Use your custom marker icon
+                    ? Entertainment
+                    : stop.cat === "offices"
+                      ? Work
+                      : stop.cat === "schools"
+                        ? Educational
+                        : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
             }}
             onClick={() => handleMarkerClick(stop)}
@@ -188,21 +236,9 @@ const Map = () => {
         ))}
 
         {/* Radius Circle */}
-        {selectedRadius && (
-          <Circle
-            center={
-              activeMarker ? activeMarker.position : lastActiveMarkerPosition
-            }
-            radius={parseFloat(selectedRadius)}
-            options={{
-              strokeColor: "#eeeeee",
-              strokeOpacity: 0.8,
-              strokeWeight: 1,
-              fillColor: "#FF0000",
-              fillOpacity: 0.15,
-            }}
-          />
-        )}
+
+        {circles}
+
         {nearByStop.map((stop, index) => (
           <Marker
             key={index}
@@ -213,12 +249,12 @@ const Map = () => {
                 stop.cat === "restaurants"
                   ? restaurants
                   : stop.cat === "entertainment"
-                  ? Entertainment
-                  : stop.cat === "offices"
-                  ? Work
-                  : stop.cat === "schools"
-                  ? Educational
-                  : restaurants, // Use your custom marker icon
+                    ? Entertainment
+                    : stop.cat === "offices"
+                      ? Work
+                      : stop.cat === "schools"
+                        ? Educational
+                        : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
             }}
             onClick={() => handleMarkerClick(stop)}
@@ -232,12 +268,14 @@ const Map = () => {
             title={activeMarker.title}
             url={activeMarker.url}
             address={activeMarker.address}
+            cost={activeMarker.cost}
+            cuisine={activeMarker.cuisine}
           />
         )}
 
         {/* Filters */}
         <Controllers
-        activeMarker={activeMarker}
+          activeMarker={activeMarker}
           selectedRadius={selectedRadius}
           handleFilterClick={handleFilterClick}
           handleRadiusChange={handleRadiusChange}
