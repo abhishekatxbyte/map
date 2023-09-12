@@ -43,7 +43,7 @@ const Map = () => {
     url: item.URL,
     cost: item["Cost for two"] ? item["Cost for two"] : '',
     cat: item.filter_category,
-    cuisine:item.Cuisine,
+    cuisine: item.Cuisine,
     master: item.restaurant_id ? true : false,
   }));
   function haversine(lat1, lon1, lat2, lon2) {
@@ -114,6 +114,7 @@ const Map = () => {
     setActiveMarker(null);
     setTimeout(() => {
       setLastActiveMarkerPosition(null);
+      setCircles([])
     }, 1000);
   };
 
