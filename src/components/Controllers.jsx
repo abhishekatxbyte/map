@@ -3,123 +3,121 @@ import style from "./map.module.css";
 import work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
+
 const Controllers = ({
   selectedRadius,
   handleRadiusChange,
   handleFilterClick,
-  activeMarker
+  activeMarker,
 }) => {
+  // Define an array of Tier values
+  const tierValues = [500, 700, 900, 1000, 2000, 3000];
+
+  // Check if selectedRadius is empty
+  const isRadiusEmpty = selectedRadius.length === 0;
   return (
     <div className={style.filters}>
-      <div className={style.tearFilter}>
-        <div className={style.tears}>
+      <div className={style.TierFilter}>
+        <div className={style.Tiers}>
           <input
-            type="radio"
+            type="checkbox"
             name="radius"
             value="500"
             onChange={() => handleRadiusChange(500)}
-            disabled={activeMarker ? false : true}
+            disabled={!activeMarker}
             style={{
-              cursor: !activeMarker ? "not-allowed" : 'default'
-
+              cursor: !activeMarker ? "not-allowed" : "default",
             }}
-            checked={activeMarker ? selectedRadius === 500 : null}
+            checked={!isRadiusEmpty && selectedRadius.includes(500)}
           />
-          <label htmlFor="vehicle1">Tear 1 = 500 mts</label>
+          <label htmlFor="vehicle1">Tier 1 = 500 mts</label>
         </div>
-        <div className={style.tears}>
+        <div className={style.Tiers}>
           <input
-            type="radio"
+            type="checkbox"
             name="radius"
-            value="700" disabled={activeMarker ? false : true}
-            style={{
-              cursor: !activeMarker ? "not-allowed" : 'default'
-
-            }}
+            value="700"
             onChange={() => handleRadiusChange(700)}
-            checked={activeMarker ? selectedRadius === 700 : null}
-
-          />
-          <label htmlFor="vehicle2">Tear 2 = 700 mts</label>
-        </div>
-
-        <div className={style.tears}>
-          <input
-            type="radio"
-            name="radius" disabled={activeMarker ? false : true}
+            disabled={!activeMarker}
             style={{
-              cursor: !activeMarker ? "not-allowed" : 'default'
-
+              cursor: !activeMarker ? "not-allowed" : "default",
             }}
+            checked={!isRadiusEmpty && selectedRadius.includes(700)}
+          />
+          <label htmlFor="vehicle2">Tier 2 = 700 mts</label>
+        </div>
+        <div className={style.Tiers}>
+          <input
+            type="checkbox"
+            name="radius"
             value="900"
             onChange={() => handleRadiusChange(900)}
-            checked={activeMarker ? selectedRadius === 900 : null}
-
+            disabled={!activeMarker}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : "default",
+            }}
+            checked={!isRadiusEmpty && selectedRadius.includes(900)}
           />
-          <label htmlFor="vehicle3">Tear 3 = 900 mts</label>
+          <label htmlFor="vehicle3">Tier 3 = 900 mts</label>
         </div>
       </div>
-      <div className={style.tearFilter}>
-        <div className={style.tears}>
+      <div className={style.TierFilter}>
+        <div className={style.Tiers}>
           <input
-            type="radio"
+            type="checkbox"
             id="vehicle1"
             name="radius"
             value="1000"
             onChange={() => handleRadiusChange(1000)}
-            disabled={activeMarker ? false : true}
+            disabled={!activeMarker}
             style={{
-              cursor: !activeMarker ? "not-allowed" : 'default'
-
+              cursor: !activeMarker ? "not-allowed" : "default",
             }}
-            checked={activeMarker ? selectedRadius === 1000 : null}
+            checked={!isRadiusEmpty && selectedRadius.includes(1000)}
           />
-          <label htmlFor="vehicle1">Tear 1 = 1 KM</label>
+          <label htmlFor="vehicle1">Tier 1 = 1 KM</label>
         </div>
-        <div className={style.tears}>
+        <div className={style.Tiers}>
           <input
-            type="radio"
+            type="checkbox"
             id="vehicle2"
             name="radius"
-            value="2000" disabled={activeMarker ? false : true}
-            style={{
-              cursor: !activeMarker ? "not-allowed" : 'default'
-
-            }}
+            value="2000"
             onChange={() => handleRadiusChange(2000)}
-            checked={activeMarker ? selectedRadius === 2000 : null}
-
-          />
-          <label htmlFor="vehicle2">Tear 2 = 2 KM</label>
-        </div>
-
-        <div className={style.tears}>
-          <input
-            type="radio"
-            id="vehicle3"
-            name="radius" disabled={activeMarker ? false : true}
+            disabled={!activeMarker}
             style={{
-              cursor: !activeMarker ? "not-allowed" : 'default'
-
+              cursor: !activeMarker ? "not-allowed" : "default",
             }}
+            checked={!isRadiusEmpty && selectedRadius.includes(2000)}
+          />
+          <label htmlFor="vehicle2">Tier 2 = 2 KM</label>
+        </div>
+        <div className={style.Tiers}>
+          <input
+            type="checkbox"
+            id="vehicle3"
+            name="radius"
             value="3000"
             onChange={() => handleRadiusChange(3000)}
-            checked={activeMarker ? selectedRadius === 3000 : null}
-
+            disabled={!activeMarker}
+            style={{
+              cursor: !activeMarker ? "not-allowed" : "default",
+            }}
+            checked={!isRadiusEmpty && selectedRadius.includes(3000)}
           />
-          <label htmlFor="vehicle3">Tear 3 = 3 KM</label>
+          <label htmlFor="vehicle3">Tier 3 = 3 KM</label>
         </div>
       </div>
       <div className={style.placeFilter}>
         <div className={style.places}>
-          <img src={Educational} className={style.marker} />
+          <img src={Educational} alt="Educational" className={style.marker} />
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="schools" disabled={activeMarker ? false : true}
+              value="schools"
+              disabled={!activeMarker}
               style={{
-                cursor: !activeMarker ? "not-allowed" : 'default'
-
+                cursor: !activeMarker ? "not-allowed" : "default",
               }}
               onChange={(e) => handleFilterClick(e)}
             />
@@ -127,14 +125,14 @@ const Controllers = ({
           </div>
         </div>
         <div className={style.places}>
-          <img src={work} className={style.marker} />
+          <img src={work} alt="Work" className={style.marker} />
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="offices" disabled={activeMarker ? false : true}
+              value="offices"
+              disabled={!activeMarker}
               style={{
-                cursor: !activeMarker ? "not-allowed" : 'default'
-
+                cursor: !activeMarker ? "not-allowed" : "default",
               }}
               onChange={(e) => handleFilterClick(e)}
             />
@@ -142,15 +140,18 @@ const Controllers = ({
           </div>
         </div>
         <div className={style.places}>
-          <img src={Entertainment} className={style.marker} />
-
+          <img
+            src={Entertainment}
+            alt="Entertainment"
+            className={style.marker}
+          />
           <div className={style.filter}>
             <input
               type="checkbox"
-              value="entertainment" disabled={activeMarker ? false : true}
+              value="entertainment"
+              disabled={!activeMarker}
               style={{
-                cursor: !activeMarker ? "not-allowed" : 'default'
-
+                cursor: !activeMarker ? "not-allowed" : "default",
               }}
               onChange={(e) => handleFilterClick(e)}
             />

@@ -6,7 +6,7 @@
   gap: 1em;
 }
 
-.tearFilter {
+.TierFilter {
   background-color: white;
   padding: 1em;
   border-radius: 1em;
@@ -39,12 +39,12 @@
   gap: 0.5em;
 }
 
-.tears {
+.Tiers {
   display: flex;
   gap: 0.5em;
 }
 
-.tears input {
+.Tiers input {
   zoom: 1.7
 }
 

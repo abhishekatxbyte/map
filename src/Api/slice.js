@@ -7,12 +7,13 @@ export const fetchRestaurants = createAsyncThunk(
   "users/fetchRestaurants",
   async () => {
     try {
-      const response = await axios.get("http://localhost:3000/restaurants");
-      return response.data;
+      // const response = await axios.get("http://localhost:3000/restaurants");
+      // console.log(response)
+      // return response.data;
 
       // Work with the response...
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   }
 );

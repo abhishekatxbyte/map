@@ -4,7 +4,7 @@ import React from "react";
 // Memoize the InfoWindow component to prevent unnecessary re-renders
 const InfoWindows = React.memo(
   ({ position, onCloseClick, title, address, url, cost, cuisine }) => (
-    <InfoWindow position={position} onCloseClick={onCloseClick}>
+    <InfoWindow position={position} onCloseClick={onCloseClick} options={{ pixelOffset: new window.google.maps.Size(0, -20) }} >
       <div style={{ width: "200px", display: 'flex', flexDirection: "column", gap: "0.4em" }}>
         <h3>{title}</h3>
         <p>{address}</p>
