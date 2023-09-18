@@ -14,7 +14,7 @@ const Map = () => {
 
   const [map, setMap] = useState(null);
   const [activeMarker, setActiveMarker] = useState(null);
-
+  const [hoverData, setHoverData] = useState(false)
   const [selectedRadius, setSelectedRadius] = useState([]);
   const [circles, setCircles] = useState([]);
   const [activeCircle, setActiveCircle] = useState(null);
@@ -110,28 +110,32 @@ const Map = () => {
 
   // Marker click handler
   const handleMarkerClick = (marker) => {
-    setSelectedRadius([])
-    setLastActiveMarkerPosition(marker.position);
-    setActiveMarker(marker);
+    if (!hoverData) {
+      setSelectedRadius([])
+      setLastActiveMarkerPosition(marker.position);
+      setActiveMarker(marker);
 
-    // Create or update the circle when a marker is clicked
-    const newCircle = (
-      <Circle
-        key={marker.title} // Use a unique key based on marker info
-        center={marker.position}
-        radius={selectedRadius}
-        options={{
-          strokeColor: "#ff0000",
-          strokeOpacity: 0.8,
-          strokeWeight: 1,
-          fillColor: "#FFf000",
-          fillOpacity: 0.15,
-        }}
-      />
-    );
+      // Create or update the circle when a marker is clicked
+      const newCircle = (
+        <Circle
+          key={marker.title} // Use a unique key based on marker info
+          center={marker.position}
+          radius={selectedRadius}
+          options={{
+            strokeColor: "#ff0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 1,
+            fillColor: "#FFf000",
+            fillOpacity: 0.15,
+          }}
+        />
+      );
 
-    // Set the active circle
-    setActiveCircle(newCircle);
+      // Set the active circle
+      setActiveCircle(newCircle);
+    } else {
+      return
+    }
   };
   // Close InfoWindow without clearing the selectedRadius
 
@@ -188,12 +192,13 @@ const Map = () => {
   };
   const handleCloseInfoWindow = () => {
     setActiveMarker(null);
+    setHoverData(false)
     setTimeout(() => {
       setLastActiveMarkerPosition(null);
       setActiveCircle(null); // Clear the active circle
     }, 1000);
   };
-
+  console.log(hoverData)
   // Filter click handler
   const handleFilterClick = (e) => {
     const key = e.target.value;
@@ -266,7 +271,7 @@ const Map = () => {
                         : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
             }}
-            onClick={() => handleMarkerClick(stop)}
+            onClick={() => { handleMarkerClick(stop), setHoverData(true) }}
           />
         ))}
 
