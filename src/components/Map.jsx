@@ -198,7 +198,6 @@ const Map = () => {
       setActiveCircle(null); // Clear the active circle
     }, 1000);
   };
-  console.log(hoverData)
   // Filter click handler
   const handleFilterClick = (e) => {
     const key = e.target.value;
