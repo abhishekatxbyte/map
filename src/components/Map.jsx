@@ -8,19 +8,43 @@ import restaurants from "./../assets/restaurants.svg";
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
-import { haversine } from "./calculateRadius";
+import { haversine } from "./Circle/calculateRadius";
+export const generateCircles = (selectedRadiusArray, activeMarker) => {
+  const circleColors = [
+    { strokeColor: "#ff0000", fillColor: "#FFf000" },
+    { strokeColor: "#ff0000", fillColor: "#FFe000" },
+    { strokeColor: "#ff0000", fillColor: "#FFd000" },
+    { strokeColor: "#ff0000", fillColor: "#FFf000" },
+    { strokeColor: "#ff0000", fillColor: "#FFe000" },
+    { strokeColor: "#ff0000", fillColor: "#FFd000" },
+  ];
 
+  const newCircles = selectedRadiusArray.map((radius, index) => (
+    <Circle
+      key={index}
+      center={activeMarker ? activeMarker.position : lastActiveMarkerPosition}
+      radius={radius}
+      options={{
+        strokeColor: circleColors[index].strokeColor,
+        strokeOpacity: 0.8,
+        strokeWeight: 1,
+        fillColor: circleColors[index].fillColor,
+        fillOpacity: 0.15,
+      }}
+    />
+  ));
+
+  return newCircles;
+};
 const Map = () => {
-  // State variables
-
   const [map, setMap] = useState(null);
   const [activeMarker, setActiveMarker] = useState(null);
   const [hoverData, setHoverData] = useState(false)
   const [selectedRadius, setSelectedRadius] = useState([]);
-  const [circles, setCircles] = useState([]);
   const [activeCircle, setActiveCircle] = useState(null);
   const [lastActiveMarkerPosition, setLastActiveMarkerPosition] =
     useState(null);
+
   const [catData, setCatData] = useState(data);
   const [check, setCheck] = useState({
     schools: false,
@@ -117,87 +141,21 @@ const Map = () => {
       // Set the active circle
       setActiveCircle(newCircle);
     } else {
-      //       setLastActiveMarkerPosition(marker.position);
-      //  const newCircle = (
-      //         <Circle
-      //           key={marker.title} // Use a unique key based on marker info
-      //           center={marker.position}
-      //           radius={selectedRadius}
-      //           options={{
-      //             strokeColor: "#ff0000",
-      //             strokeOpacity: 0.8,
-      //             strokeWeight: 1,
-      //             fillColor: "#FFf000",
-      //             fillOpacity: 0.15,
-      //           }}
-      //         />
-      //       );
-
-      //       // Set the active circle
-      //       setActiveCircle(newCircle);
       return
     }
   };
   // Close InfoWindow without clearing the selectedRadius
 
-  console.log(activeCircle)
-  const handleRadiusChange = (value) => {
 
-    setSelectedRadius((prev) => {
-      const uniqueValues = new Set(prev);
 
-      if (uniqueValues.has(value)) {
-        uniqueValues.delete(value);
-      } else {
-        uniqueValues.add(value);
-      }
 
-      const selectedRadiusArray = [...uniqueValues];
-
-      // Update the active circles here using selectedRadiusArray
-      const newCircles = generateCircles(selectedRadiusArray);
-
-      // Set the activeCircle state with the new circles
-      setActiveCircle(newCircles);
-
-      return selectedRadiusArray;
-    });
-  };
-
-  const generateCircles = (selectedRadiusArray) => {
-    const circleColors = [
-      { strokeColor: "#ff0000", fillColor: "#FFf000" },
-      { strokeColor: "#ff0000", fillColor: "#FFe000" },
-      { strokeColor: "#ff0000", fillColor: "#FFd000" },
-      { strokeColor: "#ff0000", fillColor: "#FFf000" },
-      { strokeColor: "#ff0000", fillColor: "#FFe000" },
-      { strokeColor: "#ff0000", fillColor: "#FFd000" },
-    ];
-
-    const newCircles = selectedRadiusArray.map((radius, index) => (
-      <Circle
-        key={index}
-        center={activeMarker ? activeMarker.position : lastActiveMarkerPosition}
-        radius={radius}
-        options={{
-          strokeColor: circleColors[index].strokeColor,
-          strokeOpacity: 0.8,
-          strokeWeight: 1,
-          fillColor: circleColors[index].fillColor,
-          fillOpacity: 0.15,
-        }}
-      />
-    ));
-
-    return newCircles;
-  };
   const handleCloseInfoWindow = () => {
     setActiveMarker(null);
     setHoverData(false)
     setTimeout(() => {
       setLastActiveMarkerPosition(null);
       setActiveCircle(null); // Clear the active circle
-    }, 2000);
+    }, 1000);
   };
   // Filter click handler
   const handleFilterClick = (e) => {
@@ -244,7 +202,6 @@ const Map = () => {
           ],
         }}
       >
-        {/* Markers */}
 
         {tourStops.map((stop, index) => (
           <Marker
@@ -295,7 +252,7 @@ const Map = () => {
                         : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
             }}
-            onClick={() => handleMarkerClick(stop)}
+            onClick={() => { handleMarkerClick(stop), setHoverData(true) }}
           />
         ))}
         {/* InfoWindow */}
@@ -316,7 +273,8 @@ const Map = () => {
           activeMarker={activeMarker}
           selectedRadius={selectedRadius}
           handleFilterClick={handleFilterClick}
-          handleRadiusChange={handleRadiusChange}
+          setSelectedRadius={setSelectedRadius}
+          setActiveCircle={setActiveCircle}
         />
       </GoogleMap>
     </div>

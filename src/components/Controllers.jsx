@@ -3,11 +3,13 @@ import style from "./map.module.css";
 import work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
+import { handleRadiusChange } from "./Circle/calculateRadius";
 
 const Controllers = ({
   selectedRadius,
-  handleRadiusChange,
   handleFilterClick,
+  setActiveCircle,
+  setSelectedRadius,
   activeMarker,
 }) => {
   // Define an array of Tier values
@@ -23,7 +25,7 @@ const Controllers = ({
             type="checkbox"
             name="radius"
             value="500"
-            onChange={() => handleRadiusChange(500)}
+            onChange={() => handleRadiusChange(500, setSelectedRadius, setActiveCircle, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -37,7 +39,7 @@ const Controllers = ({
             type="checkbox"
             name="radius"
             value="700"
-            onChange={() => handleRadiusChange(700)}
+            onChange={() => handleRadiusChange(700, setSelectedRadius, setActiveCircle, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -51,7 +53,7 @@ const Controllers = ({
             type="checkbox"
             name="radius"
             value="900"
-            onChange={() => handleRadiusChange(900)}
+            onChange={() => handleRadiusChange(900, setSelectedRadius, setActiveCircle, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -68,7 +70,7 @@ const Controllers = ({
             id="vehicle1"
             name="radius"
             value="1000"
-            onChange={() => handleRadiusChange(1000)}
+            onChange={() => handleRadiusChange(1000, setSelectedRadius, setActiveCircle, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -83,7 +85,7 @@ const Controllers = ({
             id="vehicle2"
             name="radius"
             value="2000"
-            onChange={() => handleRadiusChange(2000)}
+            onChange={() => handleRadiusChange(2000, setSelectedRadius, setActiveCircle, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -98,7 +100,7 @@ const Controllers = ({
             id="vehicle3"
             name="radius"
             value="3000"
-            onChange={() => handleRadiusChange(3000)}
+            onChange={() => handleRadiusChange(3000, setSelectedRadius, setActiveCircle, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
