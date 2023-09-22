@@ -8,6 +8,7 @@ import restaurants from "./../assets/restaurants.svg";
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
+import { haversine } from "./calculateRadius";
 
 const Map = () => {
   // State variables
@@ -20,7 +21,6 @@ const Map = () => {
   const [activeCircle, setActiveCircle] = useState(null);
   const [lastActiveMarkerPosition, setLastActiveMarkerPosition] =
     useState(null);
-
   const [catData, setCatData] = useState(data);
   const [check, setCheck] = useState({
     schools: false,
@@ -47,24 +47,7 @@ const Map = () => {
     cuisine: item.Cuisine,
     master: item.restaurant_id ? true : false,
   }));
-  function haversine(lat1, lon1, lat2, lon2) {
-    const toRadians = (degrees) => (degrees * Math.PI) / 180;
-    const earthRadius = 6371000; // Radius of the Earth in meters
 
-    const φ1 = toRadians(lat1);
-    const φ2 = toRadians(lat2);
-    const Δφ = toRadians(lat2 - lat1);
-    const Δλ = toRadians(lon2 - lon1);
-
-    const a =
-      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-    const distance = earthRadius * c;
-
-    return distance;
-  }
 
   const filteredMarkers = catData.filter((marker) => {
     if (activeMarker) {
@@ -134,12 +117,30 @@ const Map = () => {
       // Set the active circle
       setActiveCircle(newCircle);
     } else {
+      //       setLastActiveMarkerPosition(marker.position);
+      //  const newCircle = (
+      //         <Circle
+      //           key={marker.title} // Use a unique key based on marker info
+      //           center={marker.position}
+      //           radius={selectedRadius}
+      //           options={{
+      //             strokeColor: "#ff0000",
+      //             strokeOpacity: 0.8,
+      //             strokeWeight: 1,
+      //             fillColor: "#FFf000",
+      //             fillOpacity: 0.15,
+      //           }}
+      //         />
+      //       );
+
+      //       // Set the active circle
+      //       setActiveCircle(newCircle);
       return
     }
   };
   // Close InfoWindow without clearing the selectedRadius
 
-
+  console.log(activeCircle)
   const handleRadiusChange = (value) => {
 
     setSelectedRadius((prev) => {
@@ -196,7 +197,7 @@ const Map = () => {
     setTimeout(() => {
       setLastActiveMarkerPosition(null);
       setActiveCircle(null); // Clear the active circle
-    }, 1000);
+    }, 2000);
   };
   // Filter click handler
   const handleFilterClick = (e) => {
@@ -243,7 +244,6 @@ const Map = () => {
           ],
         }}
       >
-        {/* Markers */}
         {/* Markers */}
 
         {tourStops.map((stop, index) => (
