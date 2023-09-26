@@ -1,4 +1,3 @@
-import { generateCircles } from "../Map";
 
 export function haversine(lat1, lon1, lat2, lon2) {
     const toRadians = (degrees) => (degrees * Math.PI) / 180;
@@ -19,25 +18,3 @@ export function haversine(lat1, lon1, lat2, lon2) {
     return distance;
 }
 
-export const handleRadiusChange = (value, setSelectedRadius, setActiveCircle, activeMarker) => {
-
-    setSelectedRadius((prev) => {
-        const uniqueValues = new Set(prev);
-
-        if (uniqueValues.has(value)) {
-            uniqueValues.delete(value);
-        } else {
-            uniqueValues.add(value);
-        }
-
-        const selectedRadiusArray = [...uniqueValues];
-
-        // Update the active circles here using selectedRadiusArray
-        const newCircles = generateCircles(selectedRadiusArray, activeMarker);
-
-        // Set the activeCircle state with the new circles
-        setActiveCircle(newCircles);
-
-        return selectedRadiusArray;
-    });
-};

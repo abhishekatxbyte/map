@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GoogleMap, Marker, InfoWindow, Circle } from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow, Circle, MarkerClustererF, MarkerClusterer } from "@react-google-maps/api";
 import Work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
@@ -9,43 +9,25 @@ import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
 import { haversine } from "./Circle/calculateRadius";
-export const generateCircles = (selectedRadiusArray, activeMarker) => {
-  const circleColors = [
-    { strokeColor: "#ff0000", fillColor: "#FFf000" },
-    { strokeColor: "#ff0000", fillColor: "#FFe000" },
-    { strokeColor: "#ff0000", fillColor: "#FFd000" },
-    { strokeColor: "#ff0000", fillColor: "#FFf000" },
-    { strokeColor: "#ff0000", fillColor: "#FFe000" },
-    { strokeColor: "#ff0000", fillColor: "#FFd000" },
-  ];
+import {
+  SET_CURRENT_MARKER,
+  TOGGLE_SHOWINFO,
+  SET_ACTIVE_MARKER,
+  SET_SELECTED_RADIUS,
+} from "./../Api/slice";
+import { useDispatch, useSelector } from "react-redux";
 
-  const newCircles = selectedRadiusArray.map((radius, index) => (
-    <Circle
-      key={index}
-      center={activeMarker ? activeMarker.position : lastActiveMarkerPosition}
-      radius={radius}
-      options={{
-        strokeColor: circleColors[index].strokeColor,
-        strokeOpacity: 0.8,
-        strokeWeight: 1,
-        fillColor: circleColors[index].fillColor,
-        fillOpacity: 0.15,
-      }}
-    />
-  ));
-
-  return newCircles;
-};
 const Map = () => {
   const [map, setMap] = useState(null);
-  const [activeMarker, setActiveMarker] = useState(null);
-  const [hoverData, setHoverData] = useState(false)
-  const [selectedRadius, setSelectedRadius] = useState([]);
   const [activeCircle, setActiveCircle] = useState(null);
-  const [lastActiveMarkerPosition, setLastActiveMarkerPosition] =
-    useState(null);
-
   const [catData, setCatData] = useState(data);
+  const [circleDataInfo, setCircleDataInfo] = useState(false)
+  const selectedRadius = useSelector(state => state.restaurants.selectedRadius)
+  const [checkTear, setCheckTear] = useState(false)
+  const activeMarker = useSelector(state => state.restaurants.activeMarker)
+  const currentMarker = useSelector(state => state.restaurants.currentMarker)
+  const dispatch = useDispatch()
+  const [showInfo, setShowInfo] = useState(true)
   const [check, setCheck] = useState({
     schools: false,
     entertainment: false,
@@ -75,7 +57,6 @@ const Map = () => {
 
   const filteredMarkers = catData.filter((marker) => {
     if (activeMarker) {
-      // Calculate the distance between the activeMarker and the current marker
       const distance = haversine(
         activeMarker.position.lat,
         activeMarker.position.lng,
@@ -85,20 +66,9 @@ const Map = () => {
 
       // Check if the marker is within any of the selected radii and does not have the master property
       return selectedRadius.some((radius) => distance <= radius) && !marker.master;
-    } else if (lastActiveMarkerPosition) {
-      const distance = haversine(
-        lastActiveMarkerPosition.lat,
-        lastActiveMarkerPosition.lng,
-        marker.latitude,
-        marker.longitude
-      );
-
-      // Check if the marker is within any of the selected radii and does not have the master property
-      return selectedRadius.some((radius) => distance <= radius) && !marker.master;
     }
     return false;
   });
-
   const nearByStop = filteredMarkers.map((item, index) => ({
     position: {
       lat: parseFloat(item.latitude),
@@ -114,20 +84,25 @@ const Map = () => {
   const handleLoad = (map) => {
     setMap(map);
   };
-
   // Marker click handler
   const handleMarkerClick = (marker) => {
-    if (!hoverData) {
-      setSelectedRadius([])
-      setLastActiveMarkerPosition(marker.position);
-      setActiveMarker(marker);
+    if (!marker.master) {
+      return
+    }
+    dispatch(SET_SELECTED_RADIUS([]))
+    dispatch(SET_ACTIVE_MARKER(marker))
+    setCircleDataInfo(true)
+    setShowInfo(true)
+    setCheckTear(false)
+    // Create or update the circle when a marker is clicked
+    if (showInfo || circleDataInfo) {
 
-      // Create or update the circle when a marker is clicked
       const newCircle = (
+
         <Circle
           key={marker.title} // Use a unique key based on marker info
           center={marker.position}
-          radius={selectedRadius}
+          radius={0}
           options={{
             strokeColor: "#ff0000",
             strokeOpacity: 0.8,
@@ -137,25 +112,36 @@ const Map = () => {
           }}
         />
       );
-
       // Set the active circle
-      setActiveCircle(newCircle);
-    } else {
-      return
+      setActiveCircle(newCircle)
     }
   };
+  // Close InfoWindow without clearing the selectedRadius
+  let hoverTimeout;
+
+  const handleMarkerHover = (marker) => {
+    clearTimeout(hoverTimeout); // Clear any existing timeout
+
+    hoverTimeout = setTimeout(() => {
+      setShowInfo(true);
+      dispatch(SET_CURRENT_MARKER(marker));
+    }, 300); // Adjust the delay time (300 milliseconds in this example)
+  };
+
+  const handleMarkerOut = (marker) => {
+    clearTimeout(hoverTimeout); // Clear the timeout when mouse leaves
+    dispatch(SET_CURRENT_MARKER(null));
+  };
+
   // Close InfoWindow without clearing the selectedRadius
 
 
 
 
   const handleCloseInfoWindow = () => {
-    setActiveMarker(null);
-    setHoverData(false)
-    setTimeout(() => {
-      setLastActiveMarkerPosition(null);
-      setActiveCircle(null); // Clear the active circle
-    }, 1000);
+    // dispatch(SET_ACTIVE_MARKER(null))
+    setShowInfo(false);
+    setCircleDataInfo(false)
   };
   // Filter click handler
   const handleFilterClick = (e) => {
@@ -202,34 +188,43 @@ const Map = () => {
           ],
         }}
       >
+        {tourStops && (
+          <MarkerClusterer>
+            {() => {
 
-        {tourStops.map((stop, index) => (
-          <Marker
-            key={index}
-            onMouseOver={function () {
-              handleMarkerClick(stop)
+              return (
+                <>
+                  {tourStops.map((stop, index) => (
+                    <Marker
+                      key={index}
+                      onMouseOver={() => handleMarkerHover(stop)}
+                      onMouseOut={() => handleMarkerOut(stop)}
+                      onClick={() => handleMarkerClick(stop)}
+
+                      position={stop.position}
+                      title={`${stop.title} ${stop.address}`}
+                      icon={{
+                        url:
+                          stop.cat === "restaurants"
+                            ? restaurants
+                            : stop.cat === "entertainment"
+                              ? Entertainment
+                              : stop.cat === "offices"
+                                ? Work
+                                : stop.cat === "schools"
+                                  ? Educational
+                                  : restaurants, // Use your custom marker icon
+                        scaledSize: new window.google.maps.Size(30, 35), // Adjust size if needed
+                      }}
+
+                    />
+                  ))}
+
+                </>
+              );
             }}
-            onMouseOut={() => {
-              // handleMarkerClick(stop)
-            }}
-            position={stop.position}
-            title={`${stop.title} ${<br />} ${stop.address}`}
-            icon={{
-              url:
-                stop.cat === "restaurants"
-                  ? restaurants
-                  : stop.cat === "entertainment"
-                    ? Entertainment
-                    : stop.cat === "offices"
-                      ? Work
-                      : stop.cat === "schools"
-                        ? Educational
-                        : restaurants, // Use your custom marker icon
-              scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
-            }}
-            onClick={() => { handleMarkerClick(stop), setHoverData(true) }}
-          />
-        ))}
+          </MarkerClusterer>
+        )}
 
         {/* Active Circle */}
         {activeCircle}
@@ -238,6 +233,10 @@ const Map = () => {
           <Marker
             key={index}
             position={stop.position}
+            onMouseOver={() => handleMarkerHover(stop)}
+            onClick={() => handleMarkerClick(stop)}
+            onMouseOut={() => handleMarkerOut(stop)}
+
             title={stop.title}
             icon={{
               url:
@@ -252,11 +251,23 @@ const Map = () => {
                         : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
             }}
-            onClick={() => { handleMarkerClick(stop), setHoverData(true) }}
           />
         ))}
         {/* InfoWindow */}
-        {activeMarker && (
+
+        {showInfo && currentMarker ? (
+          <InfoWindows
+            position={currentMarker.position}
+            onCloseClick={handleCloseInfoWindow}
+            title={currentMarker.title}
+            url={currentMarker.url}
+            address={currentMarker.address}
+            cost={currentMarker.cost}
+            cuisine={currentMarker.cuisine}
+          />
+        ) : <></>
+        }
+        {showInfo && activeMarker && !currentMarker && circleDataInfo ? (
           <InfoWindows
             position={activeMarker.position}
             onCloseClick={handleCloseInfoWindow}
@@ -266,15 +277,16 @@ const Map = () => {
             cost={activeMarker.cost}
             cuisine={activeMarker.cuisine}
           />
-        )}
+        ) : <></>
+        }
 
         {/* Filters */}
         <Controllers
           activeMarker={activeMarker}
           selectedRadius={selectedRadius}
-          handleFilterClick={handleFilterClick}
-          setSelectedRadius={setSelectedRadius}
           setActiveCircle={setActiveCircle}
+          checkTear={checkTear} setCheckTear={setCheckTear}
+          handleFilterClick={handleFilterClick}
         />
       </GoogleMap>
     </div>

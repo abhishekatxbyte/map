@@ -1,22 +1,82 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./map.module.css";
 import work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
-import { handleRadiusChange } from "./Circle/calculateRadius";
+import { useDispatch, useSelector } from "react-redux";
+import { SET_SELECTED_RADIUS } from "../Api/slice";
+import { Circle } from "@react-google-maps/api";
 
 const Controllers = ({
-  selectedRadius,
   handleFilterClick,
   setActiveCircle,
-  setSelectedRadius,
-  activeMarker,
+  setCheckTear,
+  checkTear
 }) => {
+  const selectedRadius = useSelector(state => state.restaurants.selectedRadius)
+  const activeMarker = useSelector(state => state.restaurants.activeMarker)
+  const currentMarker = useSelector(state => state.restaurants.currentMarker)
+  const dispatch = useDispatch()
   // Define an array of Tier values
-  const tierValues = [500, 700, 900, 1000, 2000, 3000];
+
+  const generateCircles = (selectedRadiusArray, activeMarker) => {
+    const circleColors = [
+      { strokeColor: "#ff0000", fillColor: "#FFf000" },
+      { strokeColor: "#ff0000", fillColor: "#FFe000" },
+      { strokeColor: "#ff0000", fillColor: "#FFd000" },
+      { strokeColor: "#ff0000", fillColor: "#FFf000" },
+      { strokeColor: "#ff0000", fillColor: "#FFe000" },
+      { strokeColor: "#ff0000", fillColor: "#FFd000" },
+    ];
+
+    const newCircles = selectedRadiusArray.map((radius, index) => (
+      <Circle
+        key={index}
+        center={activeMarker ? activeMarker.position : currentMarker.position}
+        radius={radius}
+        options={{
+          strokeColor: circleColors[index].strokeColor,
+          strokeOpacity: 0.8,
+          strokeWeight: 1,
+          fillColor: circleColors[index].fillColor,
+          fillOpacity: 0.15,
+        }}
+      />
+    ));
+
+    return newCircles;
+  };
+
+
+  const handleRadiusChange = (value, activeMarker) => {
+    setCheckTear(true)
+    const changed_radius = (prev) => {
+      const uniqueValues = new Set(prev);
+
+      if (uniqueValues.has(value)) {
+        uniqueValues.delete(value);
+      } else {
+        uniqueValues.add(value);
+      }
+
+      const selectedRadius = [...uniqueValues];
+
+      // Update the active circles here using selectedRadiusArray
+      const newCircles = generateCircles(selectedRadius, activeMarker);
+
+      // Set the activeCircle state with the new circles
+      setActiveCircle(newCircles)
+
+      return selectedRadius;
+    }
+    const newselectedRadius = changed_radius(selectedRadius)
+    dispatch(SET_SELECTED_RADIUS(newselectedRadius))
+  };
 
   // Check if selectedRadius is empty
   const isRadiusEmpty = selectedRadius.length === 0;
+
+
   return (
     <div className={style.filters}>
       <div className={style.TierFilter}>
@@ -25,7 +85,7 @@ const Controllers = ({
             type="checkbox"
             name="radius"
             value="500"
-            onChange={() => handleRadiusChange(500, setSelectedRadius, setActiveCircle, activeMarker)}
+            onChange={() => handleRadiusChange(500, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -39,7 +99,7 @@ const Controllers = ({
             type="checkbox"
             name="radius"
             value="700"
-            onChange={() => handleRadiusChange(700, setSelectedRadius, setActiveCircle, activeMarker)}
+            onChange={() => handleRadiusChange(700, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -53,7 +113,7 @@ const Controllers = ({
             type="checkbox"
             name="radius"
             value="900"
-            onChange={() => handleRadiusChange(900, setSelectedRadius, setActiveCircle, activeMarker)}
+            onChange={() => handleRadiusChange(900, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -70,7 +130,7 @@ const Controllers = ({
             id="vehicle1"
             name="radius"
             value="1000"
-            onChange={() => handleRadiusChange(1000, setSelectedRadius, setActiveCircle, activeMarker)}
+            onChange={() => handleRadiusChange(1000, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -85,7 +145,7 @@ const Controllers = ({
             id="vehicle2"
             name="radius"
             value="2000"
-            onChange={() => handleRadiusChange(2000, setSelectedRadius, setActiveCircle, activeMarker)}
+            onChange={() => handleRadiusChange(2000, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -100,7 +160,7 @@ const Controllers = ({
             id="vehicle3"
             name="radius"
             value="3000"
-            onChange={() => handleRadiusChange(3000, setSelectedRadius, setActiveCircle, activeMarker)}
+            onChange={() => handleRadiusChange(3000, activeMarker)}
             disabled={!activeMarker}
             style={{
               cursor: !activeMarker ? "not-allowed" : "default",
@@ -165,4 +225,4 @@ const Controllers = ({
   );
 };
 
-export default Controllers;
+export default Controllers
