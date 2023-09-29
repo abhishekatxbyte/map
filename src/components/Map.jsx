@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { GoogleMap, Marker, InfoWindow, Circle, MarkerClustererF, MarkerClusterer } from "@react-google-maps/api";
+import React, { useEffect, useState } from "react";
+import { GoogleMap, Marker, InfoWindow, Circle, MarkerClustererF, MarkerClusterer, Polygon } from "@react-google-maps/api";
 import Work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
 import restaurants from "./../assets/restaurants.svg";
-
+import ZoneData from "./../Api/TreeData.json"
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
@@ -16,6 +16,7 @@ import {
   SET_SELECTED_RADIUS,
 } from "./../Api/slice";
 import { useDispatch, useSelector } from "react-redux";
+import TreeSelectComponent from "./TreeSelectComponent/TreeSelectComponent";
 
 const Map = () => {
   const [map, setMap] = useState(null);
@@ -26,6 +27,14 @@ const Map = () => {
   const [checkTear, setCheckTear] = useState(false)
   const activeMarker = useSelector(state => state.restaurants.activeMarker)
   const currentMarker = useSelector(state => state.restaurants.currentMarker)
+
+  const [highLightedArea, setHighLightedArea] = useState([
+
+    // Add more polygons if needed
+  ])
+
+  const activeArea = useSelector(state => state.restaurants.activeArea)
+  console.log(activeArea)
   const dispatch = useDispatch()
   const [showInfo, setShowInfo] = useState(true)
   const [check, setCheck] = useState({
@@ -172,6 +181,70 @@ const Map = () => {
     setCheck(updatedCheck);
     setCatData(filteredData);
   };
+  useEffect(() => {
+    if (activeArea) {
+      const coordinates = [];
+      ZoneData.forEach(zone => {
+        if (zone.value === activeArea) {
+          const cordinates = []
+          if (zone.zoneDetail.coordinates.length > 1) {
+            zone.zoneDetail.coordinates.map(cordinatess => {
+              cordinates.push(...cordinatess)
+            })
+            coordinates.push(...cordinates)
+          } else {
+            coordinates.push(...zone.zoneDetail.coordinates);
+          }
+        } else {
+
+          zone.children.forEach(circle => {
+            const cordinates = []
+            if (circle.value === activeArea) {
+              circle.children.forEach(ward => {
+                cordinates.push(...ward.coordinates);
+              });
+            }
+            else {
+              circle.children.forEach(ward => {
+                if (ward.value === activeArea) {
+                  coordinates.push(...ward.coordinates);
+                }
+              });
+            }
+            coordinates.push(...cordinates)
+          });
+        }
+      });
+
+      function convertCoordinates(inputCoordinates) {
+        const outputCoordinates = [];
+        for (const [lng, lat] of inputCoordinates) {
+          outputCoordinates.push({ lat, lng });
+        }
+        return outputCoordinates;
+      }
+      if (coordinates.length > 1) {
+
+        const zoneCordinates = []
+        coordinates.map(cordinates => {
+          const convertedCoordinates = convertCoordinates(cordinates);
+          zoneCordinates.push(convertedCoordinates);
+        })
+        setHighLightedArea([zoneCordinates]);
+
+      } else {
+
+        const convertedCoordinates = convertCoordinates(...coordinates);
+        setHighLightedArea([convertedCoordinates]);
+      }
+    } else {
+      setHighLightedArea([]);
+    }
+
+  }, [activeArea]);
+
+
+
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMap
@@ -279,6 +352,20 @@ const Map = () => {
           />
         ) : <></>
         }
+
+        {activeArea && <>{highLightedArea.map((polygonCoordinates, index) => {
+          return <Polygon
+            key={index}
+            paths={polygonCoordinates}
+            options={{
+              strokeColor: "#FF0000", // Outline color
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: "#FF0000", // Fill color
+              fillOpacity: 0.3,
+            }}
+          />
+        })}</>}
 
         {/* Filters */}
         <Controllers
