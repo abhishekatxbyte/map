@@ -34,7 +34,6 @@ const Map = () => {
   ])
 
   const activeArea = useSelector(state => state.restaurants.activeArea)
-  console.log(activeArea)
   const dispatch = useDispatch()
   const [showInfo, setShowInfo] = useState(true)
   const [check, setCheck] = useState({
@@ -185,8 +184,8 @@ const Map = () => {
     if (activeArea) {
       const coordinates = [];
       ZoneData.forEach(zone => {
+        const cordinates = []
         if (zone.value === activeArea) {
-          const cordinates = []
           if (zone.zoneDetail.coordinates.length > 1) {
             zone.zoneDetail.coordinates.map(cordinatess => {
               cordinates.push(...cordinatess)
@@ -199,9 +198,19 @@ const Map = () => {
 
           zone.children.forEach(circle => {
             const cordinates = []
+
             if (circle.value === activeArea) {
               circle.children.forEach(ward => {
-                cordinates.push(...ward.coordinates);
+
+                if (ward.coordinates.length > 1) {
+                  const tempArr = []
+                  tempArr.push(...ward.coordinates)
+                  const tempAr2 = []
+                  cordinates.push(...tempAr2);
+                } else {
+                  cordinates.push(...ward.coordinates);
+                }
+
               });
             }
             else {
@@ -242,7 +251,37 @@ const Map = () => {
     }
 
   }, [activeArea]);
-
+  const color_codes = [
+    "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF",
+    "#00FFFF", "#800000", "#008000", "#000080", "#808000",
+    "#800080", "#008080", "#C0C0C0", "#808080", "#999999",
+    "#FFA07A", "#FA8072", "#E9967A", "#F08080", "#FF6347",
+    "#FF4500", "#FFD700", "#DAA520", "#FF8C00", "#FFA500",
+    "#FFDAB9", "#FFE4B5", "#FFE4E1", "#F5DEB3", "#FFF8DC",
+    "#F0E68C", "#BDB76B", "#ADFF2F", "#7FFF00", "#7CFC00",
+    "#008000", "#008080", "#00FFFF", "#4682B4", "#87CEEB",
+    "#87CEFA", "#B0C4DE", "#1E90FF", "#6495ED", "#4169E1",
+    "#0000CD", "#00008B", "#0000FF", "#8A2BE2", "#9932CC",
+    "#9400D3", "#8B008B", "#800080", "#4B0082", "#6A5ACD",
+    "#483D8B", "#7B68EE", "#9370DB", "#8B008B", "#9400D3",
+    "#9932CC", "#BA55D3", "#800080", "#9370DB", "#DDA0DD",
+    "#DA70D6", "#FF00FF", "#FF69B4", "#FF1493", "#FFC0CB",
+    "#FFB6C1", "#FFA07A", "#FA8072", "#E9967A", "#D2691E",
+    "#CD5C5C", "#DC143C", "#B22222", "#8B0000", "#A52A2A",
+    "#A52A2A", "#8B0000", "#B22222", "#DC143C", "#CD5C5C",
+    "#D2691E", "#E9967A", "#FA8072", "#FFA07A", "#FFB6C1",
+    "#FFC0CB", "#FF1493", "#FF69B4", "#FF00FF", "#DA70D6",
+    "#DDA0DD", "#9370DB", "#800080", "#BA55D3", "#9932CC",
+    "#9400D3", "#8B008B", "#800080", "#4B0082", "#6A5ACD",
+    "#483D8B", "#7B68EE", "#0000FF", "#00008B", "#0000CD",
+    "#4169E1", "#6495ED", "#1E90FF", "#B0C4DE", "#87CEFA",
+    "#87CEEB", "#4682B4", "#00FFFF", "#008080", "#008000",
+    "#7CFC00", "#7FFF00", "#ADFF2F", "#BDB76B", "#F0E68C",
+    "#FFF8DC", "#F5DEB3", "#FFE4E1", "#FFE4B5", "#FFDAB9",
+    "#FFA500", "#FF8C00", "#FFD700", "#FF4500", "#FF6347",
+    "#F08080", "#E9967A", "#FA8072", "#FFA07A", "#0000FF",
+    "#00FF00", "#FF0000"
+  ]
 
 
   return (
@@ -353,19 +392,46 @@ const Map = () => {
         ) : <></>
         }
 
-        {activeArea && <>{highLightedArea.map((polygonCoordinates, index) => {
-          return <Polygon
-            key={index}
-            paths={polygonCoordinates}
-            options={{
-              strokeColor: "#FF0000", // Outline color
-              strokeOpacity: 0.8,
-              strokeWeight: 2,
-              fillColor: "#FF0000", // Fill color
-              fillOpacity: 0.3,
-            }}
-          />
-        })}</>}
+        {activeArea && (
+          <>
+            {highLightedArea.map((polygonCoordinates, index) => {
+              if (Array.isArray(...polygonCoordinates)) {
+
+                return polygonCoordinates.map((cordinate, index) => {
+                  console.log(cordinate)
+                  return (
+                    <Polygon
+                      key={index}
+                      paths={cordinate}
+                      options={{
+                        strokeColor: '#fff', // Outline color
+                        strokeOpacity: 0.8,
+                        strokeWeight: 3,
+                        fillColor: color_codes[index], // Fill color (use the same color as outline)
+                        fillOpacity: 0.3,
+                      }}
+                    />
+                  );
+                })
+              } else {
+                return (
+                  <Polygon
+                    key={index}
+                    paths={polygonCoordinates}
+                    options={{
+                      strokeColor: color_codes[0], // Outline color
+                      strokeOpacity: 0.8,
+                      strokeWeight: 2,
+                      fillColor: color_codes[0], // Fill color (use the same color as outline)
+                      fillOpacity: 0.3,
+                    }}
+                  />
+                );
+              }
+            })}
+          </>
+        )}
+
 
         {/* Filters */}
         <Controllers
