@@ -4,7 +4,7 @@ import Work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
 import restaurants from "./../assets/restaurants.svg";
-import ZoneData from "./../Api/TreeData.json"
+import ZoneData from "./../Api/TreeData2.json"
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
@@ -180,6 +180,7 @@ const Map = () => {
     setCheck(updatedCheck);
     setCatData(filteredData);
   };
+  console.log(activeArea)
   useEffect(() => {
     if (activeArea) {
       const coordinates = [];
@@ -215,6 +216,7 @@ const Map = () => {
             }
             else {
               circle.children.forEach(ward => {
+                console.log(ward)
                 if (ward.value === activeArea) {
                   coordinates.push(...ward.coordinates);
                 }

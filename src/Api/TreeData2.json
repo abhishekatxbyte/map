@@ -1454,7 +1454,7 @@
                 "title": "Kapra",
                 "children": [
                     {
-                        "value": "Ward1",
+                        "value": "Kapra Ward1",
                         "title": "Kapra",
                         "coordinates": [
                             [
@@ -1770,7 +1770,7 @@
                         ]
                     },
                     {
-                        "value": "Ward2",
+                        "value": "Dr AS Rao Nagar Ward2",
                         "title": "Dr AS Rao Nagar",
                         "coordinates": [
                             [
@@ -2030,7 +2030,7 @@
                         ]
                     },
                     {
-                        "value": "Ward5",
+                        "value": "Mallapur Ward5",
                         "title": "Mallapur",
                         "coordinates": [
                             [
@@ -2282,7 +2282,7 @@
                         ]
                     },
                     {
-                        "value": "Ward6",
+                        "value": "Nacharam Ward6",
                         "title": "Nacharam",
                         "coordinates": [
                             [
@@ -2444,7 +2444,7 @@
                 "title": "Uppal",
                 "children": [
                     {
-                        "value": "Ward7",
+                        "value": "Chilukanagar Ward7",
                         "title": "Chilukanagar",
                         "coordinates": [
                             [
@@ -2560,7 +2560,7 @@
                         ]
                     },
                     {
-                        "value": "Ward8",
+                        "value": "Habsiguda Ward8",
                         "title": "Habsiguda",
                         "coordinates": [
                             [
@@ -2744,7 +2744,7 @@
                         ]
                     },
                     {
-                        "value": "Ward9",
+                        "value": "Ramanthapur Ward9",
                         "title": "Ramanthapur",
                         "coordinates": [
                             [
@@ -2860,7 +2860,7 @@
                         ]
                     },
                     {
-                        "value": "Ward10",
+                        "value": "Uppal Ward10",
                         "title": "Uppal",
                         "coordinates": [
                             [
@@ -3022,7 +3022,7 @@
                 "title": "Hayathnagar",
                 "children": [
                     {
-                        "value": "Ward12",
+                        "value": "Mansoorabad Ward12",
                         "title": "Mansoorabad",
                         "coordinates": [
                             [
@@ -3170,8 +3170,8 @@
                         ]
                     },
                     {
-                        "value": "Ward14",
-                        "title": "B.N.Reddy",
+                        "value": "BN Reddy Ward14",
+                        "title": "BN Reddy Nagar",
                         "coordinates": [
                             [
                                 [
@@ -3328,7 +3328,7 @@
                 "title": "LB Nagar",
                 "children": [
                     {
-                        "value": "Ward15",
+                        "value": "Vanasthalipuram Ward15",
                         "title": "Vanasthalipuram",
                         "coordinates": [
                             [
@@ -3420,7 +3420,7 @@
                         ]
                     },
                     {
-                        "value": "Ward16",
+                        "value": "Hastinapuram Ward16",
                         "title": "Hastinapuram",
                         "coordinates": [
                             [
@@ -3814,7 +3814,7 @@
                         ]
                     },
                     {
-                        "value": "Ward17",
+                        "value": "Champapet Ward17",
                         "title": "Champapet",
                         "coordinates": [
                             [
@@ -3950,7 +3950,7 @@
                         ]
                     },
                     {
-                        "value": "Ward18",
+                        "value": "Lingojiguda Ward18",
                         "title": "Lingojiguda",
                         "coordinates": [
                             [
@@ -4093,7 +4093,7 @@
                 "children": [
                     {
                         "title": " Saroornagar",
-                        "value": "Ward19",
+                        "value": " Saroornagar Ward19",
                         "coordinates": [
                             [
                                 [
@@ -4208,7 +4208,7 @@
                         ]
                     },
                     {
-                        "value": "Ward20",
+                        "value": "Rama Krishna Puram Ward20",
                         "title": "Rama Krishna Puram",
                         "coordinates": [
                             [
@@ -4308,7 +4308,7 @@
                         ]
                     },
                     {
-                        "value": "Ward21",
+                        "value": "Kothapet Ward21",
                         "title": "Kothapet",
                         "coordinates": [
                             [
@@ -4464,7 +4464,7 @@
                         ]
                     },
                     {
-                        "value": "Ward22",
+                        "value": "Chaitanyapuri Ward22",
                         "title": "Chaitanyapuri",
                         "coordinates": [
                             [
@@ -4596,7 +4596,7 @@
                         ]
                     },
                     {
-                        "value": "Ward23",
+                        "value": "Gaddiannaram Ward23",
                         "title": "Gaddiannaram",
                         "coordinates": [
                             [
@@ -5480,7 +5480,7 @@
                 "title": "Malakpet",
                 "children": [
                     {
-                        "value": "Ward24",
+                        "value": "Saidabad Ward24",
                         "title": "Saidabad",
                         "coordinates": [
                             [
@@ -5596,7 +5596,7 @@
                         ]
                     },
                     {
-                        "value": "Ward25",
+                        "value": "Moosrambagh Ward25",
                         "title": "Moosrambagh",
                         "coordinates": [
                             [
@@ -5740,7 +5740,7 @@
                         ]
                     },
                     {
-                        "value": "Ward26",
+                        "value": "Old Malakpet Ward26",
                         "title": "Old Malakpet",
                         "coordinates": [
                             [
@@ -5840,7 +5840,7 @@
                         ]
                     },
                     {
-                        "value": "Ward27",
+                        "value": "Akberbagh Ward27",
                         "title": "Akberbagh",
                         "coordinates": [
                             [
@@ -5948,7 +5948,7 @@
                         ]
                     },
                     {
-                        "value": "Ward28",
+                        "value": "Azampura Ward28",
                         "title": "Azampura",
                         "coordinates": [
                             [
@@ -6072,7 +6072,7 @@
                         ]
                     },
                     {
-                        "value": "Ward29",
+                        "value": "Chawani Ward29",
                         "title": "Chawani",
                         "coordinates": [
                             [
@@ -6172,7 +6172,7 @@
                         ]
                     },
                     {
-                        "value": "Ward30",
+                        "value": "Dabeerpura Ward30",
                         "title": "Dabeerpura",
                         "coordinates": [
                             [
@@ -6334,7 +6334,7 @@
                 "title": "Santoshnagar",
                 "children": [
                     {
-                        "value": "Ward31",
+                        "value": "Rein Bazar Ward31",
                         "title": "Rein Bazar",
                         "coordinates": [
                             [
@@ -6434,7 +6434,7 @@
                         ]
                     },
                     {
-                        "value": "Ward34",
+                        "value": "Talabchanchalam Ward34",
                         "title": "Talabchanchalam",
                         "coordinates": [
                             [
@@ -6510,7 +6510,7 @@
                         ]
                     },
                     {
-                        "value": "Ward35",
+                        "value": "Gowlipura Ward35",
                         "title": "Gowlipura",
                         "coordinates": [
                             [
@@ -6646,7 +6646,7 @@
                         ]
                     },
                     {
-                        "value": "Ward37",
+                        "value": "Kurmaguda Ward37",
                         "title": "Kurmaguda",
                         "coordinates": [
                             [
@@ -6770,7 +6770,7 @@
                         ]
                     },
                     {
-                        "value": "Ward38",
+                        "value": "IS SADAN Ward38",
                         "title": "IS SADAN",
                         "coordinates": [
                             [
@@ -6902,7 +6902,7 @@
                         ]
                     },
                     {
-                        "value": "Ward39",
+                        "value": "Santosh Nagar Ward39",
                         "title": "Santosh Nagar",
                         "coordinates": [
                             [
@@ -7048,7 +7048,7 @@
                 "title": "Chandrayangutta",
                 "children": [
                     {
-                        "value": "Ward36",
+                        "value": "Lalithbagh Ward36",
                         "title": "Lalithbagh",
                         "coordinates": [
                             [
@@ -7156,7 +7156,7 @@
                         ]
                     },
                     {
-                        "value": "Ward40",
+                        "value": "Riyasath Nagar Ward40",
                         "title": "Riyasath Nagar",
                         "coordinates": [
                             [
@@ -7272,7 +7272,7 @@
                         ]
                     },
                     {
-                        "value": "Ward41",
+                        "value": "Kanchanbagh Ward41",
                         "title": "Kanchanbagh",
                         "coordinates": [
                             [
@@ -7540,7 +7540,7 @@
                         ]
                     },
                     {
-                        "value": "Ward42",
+                        "value": "Barkas Ward42",
                         "title": "Barkas",
                         "coordinates": [
                             [
@@ -7664,7 +7664,7 @@
                         ]
                     },
                     {
-                        "value": "Ward43",
+                        "value": "Chandrayangutta Ward43",
                         "title": "Chandrayangutta",
                         "coordinates": [
                             [
@@ -7908,7 +7908,7 @@
                         ]
                     },
                     {
-                        "value": "Ward44",
+                        "value": "Uppuguda Ward44",
                         "title": "Uppuguda",
                         "coordinates": [
                             [
@@ -8012,7 +8012,7 @@
                         ]
                     },
                     {
-                        "value": "Ward45",
+                        "value": "Jangammet Ward45",
                         "title": "Jangammet",
                         "coordinates": [
                             [
@@ -8166,7 +8166,7 @@
                 "title": "Charminar",
                 "children": [
                     {
-                        "value": "Ward32",
+                        "value": "Pathergatti Ward32",
                         "title": "Pathergatti",
                         "coordinates": [
                             [
@@ -8306,7 +8306,7 @@
                         ]
                     },
                     {
-                        "value": "Ward33",
+                        "value": "Moghalpura Ward33",
                         "title": "Moghalpura",
                         "coordinates": [
                             [
@@ -8402,7 +8402,7 @@
                         ]
                     },
                     {
-                        "value": "Ward48",
+                        "value": "Shalibanda Ward48",
                         "title": "Shalibanda",
                         "coordinates": [
                             [
@@ -8574,7 +8574,7 @@
                         ]
                     },
                     {
-                        "value": "Ward49",
+                        "value": "Ghansi Bazar Ward49",
                         "title": "Ghansi Bazar",
                         "coordinates": [
                             [
@@ -8690,7 +8690,7 @@
                         ]
                     },
                     {
-                        "value": "Ward52",
+                        "value": "Puranapul Ward52",
                         "title": "Puranapul",
                         "coordinates": [
                             [
@@ -8788,7 +8788,7 @@
                 "title": "Falaknuma",
                 "children": [
                     {
-                        "value": "Ward46",
+                        "value": "Falaknuma Ward46",
                         "title": "Falaknuma",
                         "coordinates": [
                             [
@@ -8948,7 +8948,7 @@
                         ]
                     },
                     {
-                        "value": "Ward47",
+                        "value": "Nawab Saheb Kunta Ward47",
                         "title": "Nawab Saheb Kunta",
                         "coordinates": [
                             [
@@ -9080,7 +9080,7 @@
                         ]
                     },
                     {
-                        "value": "Ward53",
+                        "value": "Doodbowli Ward53",
                         "title": "Doodbowli",
                         "coordinates": [
                             [
@@ -9192,7 +9192,7 @@
                         ]
                     },
                     {
-                        "value": "Ward54",
+                        "value": "Jahanuma Ward54",
                         "title": "Jahanuma",
                         "coordinates": [
                             [
@@ -9324,7 +9324,7 @@
                         ]
                     },
                     {
-                        "value": "Ward55",
+                        "value": "Ramnaspura Ward55",
                         "title": "Ramnaspura",
                         "coordinates": [
                             [
@@ -9620,7 +9620,7 @@
                         ]
                     },
                     {
-                        "value": "Ward56",
+                        "value": "Kishanbagh Ward56",
                         "title": "Kishanbagh",
                         "coordinates": [
                             [
@@ -9778,7 +9778,7 @@
                 "title": "Rajendra Nagar",
                 "children": [
                     {
-                        "value": "Ward60",
+                        "value": "Rajendra Nagar Ward60",
                         "title": "Rajendra Nagar",
                         "coordinates": [
                             [
@@ -10134,7 +10134,7 @@
                         ]
                     },
                     {
-                        "value": "Ward61",
+                        "value": "Attapur Ward61",
                         "title": "Attapur",
                         "coordinates": [
                             [
@@ -10306,7 +10306,7 @@
                         ]
                     },
                     {
-                        "value": "Ward57",
+                        "value": "Suleman Nagar Ward57",
                         "title": "Suleman Nagar",
                         "coordinates": [
                             [
@@ -10678,7 +10678,7 @@
                         ]
                     },
                     {
-                        "value": "Ward58",
+                        "value": "Shastri puram Ward58",
                         "title": "Shastri puram",
                         "coordinates": [
                             [
@@ -11030,7 +11030,7 @@
                         ]
                     },
                     {
-                        "value": "Ward59",
+                        "value": "Mailardevpally Ward59",
                         "title": "Mailardevpally",
                         "coordinates": [
                             [
@@ -12418,7 +12418,7 @@
                 "title": "Mehdipatnam",
                 "children": [
                     {
-                        "value": "Ward70",
+                        "value": "Mehdipatnam Ward70",
                         "title": "Mehdipatnam",
                         "coordinates": [
                             [
@@ -12534,7 +12534,7 @@
                         ]
                     },
                     {
-                        "value": "Ward71",
+                        "value": "Gudimalkapur Ward71",
                         "title": "Gudimalkapur",
                         "coordinates": [
                             [
@@ -12722,7 +12722,7 @@
                         ]
                     },
                     {
-                        "value": "Ward72",
+                        "value": "Asif Nagar Ward72",
                         "title": "Asif Nagar",
                         "coordinates": [
                             [
@@ -12846,7 +12846,7 @@
                         ]
                     },
                     {
-                        "value": "Ward73",
+                        "value": "Vijayanagar Colony Ward73",
                         "title": "Vijayanagar Colony",
                         "coordinates": [
                             [
@@ -13018,7 +13018,7 @@
                         ]
                     },
                     {
-                        "value": "Ward74",
+                        "value": "Ahmed Nagar Ward74",
                         "title": "Ahmed Nagar",
                         "coordinates": [
                             [
@@ -13142,7 +13142,7 @@
                         ]
                     },
                     {
-                        "value": "Ward75",
+                        "value": "Red Hills Ward75",
                         "title": "Red Hills",
                         "coordinates": [
                             [
@@ -13342,7 +13342,7 @@
                         ]
                     },
                     {
-                        "value": "Ward76",
+                        "value": "Mallepally Ward76",
                         "title": "Mallepally",
                         "coordinates": [
                             [
@@ -13448,7 +13448,7 @@
                 "title": "Karwan",
                 "children": [
                     {
-                        "value": "Ward62",
+                        "value": "Ziaguda Ward62",
                         "title": "Ziaguda",
                         "coordinates": [
                             [
@@ -13576,7 +13576,7 @@
                         ]
                     },
                     {
-                        "value": "Ward65",
+                        "value": "Karwan Ward65",
                         "title": "Karwan",
                         "coordinates": [
                             [
@@ -13804,7 +13804,7 @@
                         ]
                     },
                     {
-                        "value": "Ward66",
+                        "value": "Langer House Ward66",
                         "title": "Langer House",
                         "coordinates": [
                             [
@@ -13996,7 +13996,7 @@
                         ]
                     },
                     {
-                        "value": "Ward67",
+                        "value": "Golconda Ward67",
                         "title": "Golconda",
                         "coordinates": [
                             [
@@ -14160,7 +14160,7 @@
                         ]
                     },
                     {
-                        "value": "Ward68",
+                        "value": "Tolichowki Ward68",
                         "title": "Tolichowki",
                         "coordinates": [
                             [
@@ -14304,7 +14304,7 @@
                         ]
                     },
                     {
-                        "value": "Ward69",
+                        "value": "Nanalnagar Ward69",
                         "title": "Nanalnagar",
                         "coordinates": [
                             [
@@ -14458,7 +14458,7 @@
                 "title": "Goshamahal",
                 "children": [
                     {
-                        "value": "Ward50",
+                        "value": "Begum Bazar Ward50",
                         "title": "Begum Bazar",
                         "coordinates": [
                             [
@@ -14602,7 +14602,7 @@
                         ]
                     },
                     {
-                        "value": "Ward51",
+                        "value": "Gosha Mahal Ward51",
                         "title": "Gosha Mahal",
                         "coordinates": [
                             [
@@ -14718,7 +14718,7 @@
                         ]
                     },
                     {
-                        "value": "Ward63",
+                        "value": "Manghalhat Ward63",
                         "title": "Manghalhat",
                         "coordinates": [
                             [
@@ -14850,7 +14850,7 @@
                         ]
                     },
                     {
-                        "value": "Ward64",
+                        "value": "Dattathreyanagar Ward64",
                         "title": "Dattathreyanagar",
                         "coordinates": [
                             [
@@ -14958,7 +14958,7 @@
                         ]
                     },
                     {
-                        "value": "Ward77",
+                        "value": "Jambagh(Nampally) Ward77",
                         "title": "Jambagh(Nampally)",
                         "coordinates": [
                             [
@@ -15090,7 +15090,7 @@
                         ]
                     },
                     {
-                        "value": "Ward78",
+                        "value": "Gunfoundry Ward78",
                         "title": "Gunfoundry",
                         "coordinates": [
                             [
@@ -15328,7 +15328,7 @@
                 "title": "Khairatabad",
                 "children": [
                     {
-                        "value": "Ward91",
+                        "value": "Khairtabad Ward91",
                         "title": "Khairtabad",
                         "coordinates": [
                             [
@@ -15788,7 +15788,7 @@
                         ]
                     },
                     {
-                        "value": "Ward97",
+                        "value": "Somajiguda Ward97",
                         "title": "Somajiguda",
                         "coordinates": [
                             [
@@ -16020,7 +16020,7 @@
                         ]
                     },
                     {
-                        "value": "Ward98",
+                        "value": "Ameerpet Ward98",
                         "title": "Ameerpet",
                         "coordinates": [
                             [
@@ -16196,7 +16196,7 @@
                         ]
                     },
                     {
-                        "value": "Ward100",
+                        "value": "Sanathnagar Ward100",
                         "title": "Sanathnagar",
                         "coordinates": [
                             [
@@ -16310,7 +16310,7 @@
                 "title": "Jubilee Hills",
                 "children": [
                     {
-                        "value": "Ward92",
+                        "value": "Venkateshwara Colony Ward92",
                         "title": "Venkateshwara Colony",
                         "coordinates": [
                             [
@@ -16498,7 +16498,7 @@
                         ]
                     },
                     {
-                        "value": "Ward93",
+                        "value": "Banjara Hills Ward93",
                         "title": "Banjara Hills",
                         "coordinates": [
                             [
@@ -16702,7 +16702,7 @@
                         ]
                     },
                     {
-                        "value": "Ward94",
+                        "value": "Shaikpet Ward94",
                         "title": "Shaikpet",
                         "coordinates": [
                             [
@@ -16894,7 +16894,7 @@
                         ]
                     },
                     {
-                        "value": "Ward95",
+                        "value": "Jubilee Hills Ward95",
                         "title": "Jubilee Hills",
                         "coordinates": [
                             [
@@ -19248,7 +19248,7 @@
                 "title": "Amberpet",
                 "children": [
                     {
-                        "value": "Ward79",
+                        "value": "Himayathnagar Ward79",
                         "title": "Himayathnagar",
                         "coordinates": [
                             [
@@ -19344,7 +19344,7 @@
                         ]
                     },
                     {
-                        "value": "Ward80",
+                        "value": "Kachiguda Barkatpura Ward80",
                         "title": "Kachiguda Barkatpura",
                         "coordinates": [
                             [
@@ -19444,7 +19444,7 @@
                         ]
                     },
                     {
-                        "value": "Ward81",
+                        "value": "Nallakunta Ward81",
                         "title": "Nallakunta",
                         "coordinates": [
                             [
@@ -19576,7 +19576,7 @@
                         ]
                     },
                     {
-                        "value": "Ward82",
+                        "value": "Golnaka Ward82",
                         "title": "Golnaka",
                         "coordinates": [
                             [
@@ -19704,7 +19704,7 @@
                         ]
                     },
                     {
-                        "value": "Ward83",
+                        "value": "Amberpet Ward83",
                         "title": "Amberpet",
                         "coordinates": [
                             [
@@ -19800,7 +19800,7 @@
                         ]
                     },
                     {
-                        "value": "Ward84",
+                        "value": "Bagh Amberpet Ward84",
                         "title": "Bagh Amberpet",
                         "coordinates": [
                             [
@@ -19910,7 +19910,7 @@
                 "title": "Musheerabad",
                 "children": [
                     {
-                        "value": "Ward85",
+                        "value": "Adikmet Ward85",
                         "title": "Adikmet",
                         "coordinates": [
                             [
@@ -20022,7 +20022,7 @@
                         ]
                     },
                     {
-                        "value": "Ward86",
+                        "value": "Musheerabad Ward86",
                         "title": "Musheerabad",
                         "coordinates": [
                             [
@@ -20178,7 +20178,7 @@
                         ]
                     },
                     {
-                        "value": "Ward87",
+                        "value": "Ramnagar Ward87",
                         "title": "Ramnagar",
                         "coordinates": [
                             [
@@ -20298,7 +20298,7 @@
                         ]
                     },
                     {
-                        "value": "Ward88",
+                        "value": "Bholakpur Ward88",
                         "title": "Bholakpur",
                         "coordinates": [
                             [
@@ -20398,7 +20398,7 @@
                         ]
                     },
                     {
-                        "value": "Ward89",
+                        "value": "Gandhinagar Ward89",
                         "title": "Gandhinagar",
                         "coordinates": [
                             [
@@ -20494,7 +20494,7 @@
                         ]
                     },
                     {
-                        "value": "Ward90",
+                        "value": "Kavadiguda Ward90",
                         "title": "Kavadiguda",
                         "coordinates": [
                             [
@@ -20644,7 +20644,7 @@
                 "title": "Malkajgiri",
                 "children": [
                     {
-                        "value": "Ward136",
+                        "value": "Neredmet Ward136",
                         "title": "Neredmet",
                         "coordinates": [
                             [
@@ -21018,7 +21018,7 @@
                         ]
                     },
                     {
-                        "value": "Ward137",
+                        "value": "Vinayak Nagar Ward137",
                         "title": "Vinayak Nagar",
                         "coordinates": [
                             [
@@ -21290,7 +21290,7 @@
                         ]
                     },
                     {
-                        "value": "Ward138",
+                        "value": "Moula-Ali Ward138",
                         "title": "Moula-Ali",
                         "coordinates": [
                             [
@@ -21570,7 +21570,7 @@
                         ]
                     },
                     {
-                        "value": "Ward139",
+                        "value": "East Anandbagh Ward139",
                         "title": "East Anandbagh",
                         "coordinates": [
                             [
@@ -21998,7 +21998,7 @@
                         ]
                     },
                     {
-                        "value": "Ward140",
+                        "value": "Malkajgiri  Ward140",
                         "title": "Malkajgiri ",
                         "coordinates": [
                             [
@@ -22214,7 +22214,7 @@
                         ]
                     },
                     {
-                        "value": "Ward141",
+                        "value": "Gautham Nagar Ward141",
                         "title": "Gautham Nagar",
                         "coordinates": [
                             [
@@ -22416,7 +22416,7 @@
                 "title": "Secunderabad",
                 "children": [
                     {
-                        "value": "Ward142",
+                        "value": "Addagutta Ward142",
                         "title": "Addagutta",
                         "coordinates": [
                             [
@@ -22660,7 +22660,7 @@
                         ]
                     },
                     {
-                        "value": "Ward143",
+                        "value": "Tarnaka Ward143",
                         "title": "Tarnaka",
                         "coordinates": [
                             [
@@ -22942,7 +22942,7 @@
                         ]
                     },
                     {
-                        "value": "Ward144",
+                        "value": "Mettuguda Ward144",
                         "title": "Mettuguda",
                         "coordinates": [
                             [
@@ -23166,7 +23166,7 @@
                         ]
                     },
                     {
-                        "value": "Ward145",
+                        "value": "Sitaphalmandi Ward145",
                         "title": "Sitaphalmandi",
                         "coordinates": [
                             [
@@ -23358,7 +23358,7 @@
                         ]
                     },
                     {
-                        "value": "Ward146",
+                        "value": "Boudha Nagar Ward146",
                         "title": "Boudha Nagar",
                         "coordinates": [
                             [
@@ -23492,7 +23492,7 @@
                 "title": "Begumpet",
                 "children": [
                     {
-                        "value": "Ward147",
+                        "value": "Bansilalpet Ward147",
                         "title": "Bansilalpet",
                         "coordinates": [
                             [
@@ -23724,7 +23724,7 @@
                         ]
                     },
                     {
-                        "value": "Ward148",
+                        "value": "Ramgopal Pet Ward148",
                         "title": "Ramgopal Pet",
                         "coordinates": [
                             [
@@ -24040,7 +24040,7 @@
                         ]
                     },
                     {
-                        "value": "Ward149",
+                        "value": "Begumpet Ward149",
                         "title": "Begumpet",
                         "coordinates": [
                             [
@@ -24436,7 +24436,7 @@
                         ]
                     },
                     {
-                        "value": "Ward150",
+                        "value": "Monda Market Ward150",
                         "title": "Monda Market",
                         "coordinates": [
                             [
@@ -26442,7 +26442,7 @@
                 "title": "Yousufguda",
                 "children": [
                     {
-                        "value": "Ward96",
+                        "value": "Yousufguda Ward96",
                         "title": "Yousufguda",
                         "coordinates": [
                             [
@@ -26618,7 +26618,7 @@
                         ]
                     },
                     {
-                        "value": "Ward99",
+                        "value": "Vengal Rao Nagar Ward99",
                         "title": "Vengal Rao Nagar",
                         "coordinates": [
                             [
@@ -26726,7 +26726,7 @@
                         ]
                     },
                     {
-                        "value": "Ward101",
+                        "value": "Erragadda Ward101",
                         "title": "Erragadda",
                         "coordinates": [
                             [
@@ -26878,7 +26878,7 @@
                         ]
                     },
                     {
-                        "value": "Ward102",
+                        "value": "Rahamath Nagar Ward102",
                         "title": "Rahamath Nagar",
                         "coordinates": [
                             [
@@ -26978,7 +26978,7 @@
                         ]
                     },
                     {
-                        "value": "Ward103",
+                        "value": "Borabanda Ward103",
                         "title": "Borabanda",
                         "coordinates": [
                             [
@@ -27060,7 +27060,7 @@
                 "title": "Serilingampally",
                 "children": [
                     {
-                        "value": "Ward104",
+                        "value": "Kondapur Ward104",
                         "title": "Kondapur",
                         "coordinates": [
                             [
@@ -27388,7 +27388,7 @@
                         ]
                     },
                     {
-                        "value": "Ward105",
+                        "value": "Gachibowli Ward105",
                         "title": "Gachibowli",
                         "coordinates": [
                             [
@@ -27824,7 +27824,7 @@
                         ]
                     },
                     {
-                        "value": "Ward106",
+                        "value": "Serilingampally Ward106",
                         "title": "Serilingampally",
                         "coordinates": [
                             [
@@ -28194,7 +28194,7 @@
                 "title": "Chandanagar",
                 "children": [
                     {
-                        "value": "Ward107",
+                        "value": "Madhapur Ward107",
                         "title": "Madhapur",
                         "coordinates": [
                             [
@@ -28534,7 +28534,7 @@
                         ]
                     },
                     {
-                        "value": "Ward108",
+                        "value": "Miyapur Ward108",
                         "title": "Miyapur",
                         "coordinates": [
                             [
@@ -28682,7 +28682,7 @@
                         ]
                     },
                     {
-                        "value": "Ward109",
+                        "value": "Hafeezpet Ward109",
                         "title": "Hafeezpet",
                         "coordinates": [
                             [
@@ -28870,7 +28870,7 @@
                         ]
                     },
                     {
-                        "value": "Ward110",
+                        "value": "Chandanagar Ward110",
                         "title": "Chandanagar",
                         "coordinates": [
                             [
@@ -29156,7 +29156,7 @@
                 "title": "Ramachandrapuram / Patancheru",
                 "children": [
                     {
-                        "value": "Ward111",
+                        "value": "Bharathinagar(P) Ward111",
                         "title": "Bharathinagar(P)",
                         "coordinates": [
                             [
@@ -29358,7 +29358,7 @@
                         ]
                     },
                     {
-                        "value": "Ward112",
+                        "value": "Ramachandrapuram Ward112",
                         "title": "Ramachandrapuram",
                         "coordinates": [
                             [
@@ -29570,7 +29570,7 @@
                         ]
                     },
                     {
-                        "value": "Ward113",
+                        "value": "Patancheruvu Ward113",
                         "title": "Patancheruvu"
                     }
                 ]
@@ -31348,7 +31348,7 @@
                 "title": "Moosapet",
                 "children": [
                     {
-                        "value": "Ward114",
+                        "value": "KPHB Colony Ward114",
                         "title": "KPHB Colony",
                         "coordinates": [
                             [
@@ -31520,7 +31520,7 @@
                         ]
                     },
                     {
-                        "value": "Ward115",
+                        "value": "Balajinagar Ward115",
                         "title": "Balajinagar",
                         "coordinates": [
                             [
@@ -31708,7 +31708,7 @@
                         ]
                     },
                     {
-                        "value": "Ward116",
+                        "value": "Allapur Ward116",
                         "title": "Allapur",
                         "coordinates": [
                             [
@@ -31864,7 +31864,7 @@
                         ]
                     },
                     {
-                        "value": "Ward117",
+                        "value": "Moosapet Ward117",
                         "title": "Moosapet",
                         "coordinates": [
                             [
@@ -32048,8 +32048,8 @@
                         ]
                     },
                     {
-                        "value": "Ward118",
-                        "title": "Fathe Nagar",
+                        "value": "Fathe Darwaza Ward118",
+                        "title": "Fathe Darwaza",
                         "coordinates": [
                             [
                                 [
@@ -32242,7 +32242,7 @@
                 "title": "Kukatpally Circle",
                 "children": [
                     {
-                        "value": "Ward119",
+                        "value": "Old Bowenpally Ward119",
                         "title": "Old Bowenpally",
                         "coordinates": [
                             [
@@ -32434,7 +32434,7 @@
                         ]
                     },
                     {
-                        "value": "Ward120",
+                        "value": "Balanagar Ward120",
                         "title": "Balanagar",
                         "coordinates": [
                             [
@@ -32622,7 +32622,7 @@
                         ]
                     },
                     {
-                        "value": "Ward121",
+                        "value": "Kukatpally Ward121",
                         "title": "Kukatpally",
                         "coordinates": [
                             [
@@ -32826,7 +32826,7 @@
                         ]
                     },
                     {
-                        "value": "Ward122",
+                        "value": "Vivekananda Nagar Colony Ward122",
                         "title": "Vivekananda Nagar Colony",
                         "coordinates": [
                             [
@@ -32958,7 +32958,7 @@
                         ]
                     },
                     {
-                        "value": "Ward123",
+                        "value": "Hydernagar Ward123",
                         "title": "Hydernagar",
                         "coordinates": [
                             [
@@ -33110,7 +33110,7 @@
                         ]
                     },
                     {
-                        "value": "Ward124",
+                        "value": "Allwyn Colony Ward124",
                         "title": "Allwyn Colony",
                         "coordinates": [
                             [
@@ -33252,7 +33252,7 @@
                 "title": "Quthbullapur",
                 "children": [
                     {
-                        "value": "Ward127",
+                        "value": "Rangareddy nagar Ward127",
                         "title": "Rangareddy nagar",
                         "coordinates": [
                             [
@@ -33384,7 +33384,7 @@
                         ]
                     },
                     {
-                        "value": "Ward130",
+                        "value": "Subhashnagar Ward130",
                         "title": "Subhashnagar",
                         "coordinates": [
                             [
@@ -33608,7 +33608,7 @@
                         ]
                     },
                     {
-                        "value": "Ward131",
+                        "value": "Qutbullapur Ward131",
                         "title": "Qutbullapur",
                         "coordinates": [
                             [
@@ -33748,7 +33748,7 @@
                         ]
                     },
                     {
-                        "value": "Ward132",
+                        "value": "Jeedimetla Ward132",
                         "title": "Jeedimetla",
                         "coordinates": [
                             [
@@ -33998,7 +33998,7 @@
                 "title": "Gajula Ramaram",
                 "children": [
                     {
-                        "value": "Ward125",
+                        "value": "Gajula Ramaram Ward125",
                         "title": "Gajula Ramaram",
                         "coordinates": [
                             [
@@ -34226,7 +34226,7 @@
                         ]
                     },
                     {
-                        "value": "Ward126",
+                        "value": "Jagadgirigutta Ward126",
                         "title": "Jagadgirigutta",
                         "coordinates": [
                             [
@@ -34378,7 +34378,7 @@
                         ]
                     },
                     {
-                        "value": "Ward128",
+                        "value": "Chintal Ward128",
                         "title": "Chintal",
                         "coordinates": [
                             [
@@ -34522,7 +34522,7 @@
                         ]
                     },
                     {
-                        "value": "Ward129",
+                        "value": "Suraram Ward129",
                         "title": "Suraram",
                         "coordinates": [
                             [
@@ -34760,7 +34760,7 @@
                 "title": "Alwal",
                 "children": [
                     {
-                        "value": "Ward133",
+                        "value": "Macha Bollaram Ward133",
                         "title": "Macha Bollaram",
                         "coordinates": [
                             [
@@ -35102,7 +35102,7 @@
                         ]
                     },
                     {
-                        "value": "Ward134",
+                        "value": "Alwal Ward134",
                         "title": "Alwal",
                         "coordinates": [
                             [
@@ -35306,7 +35306,7 @@
                         ]
                     },
                     {
-                        "value": "Ward135",
+                        "value": "Venkatapuram Ward135",
                         "title": "Venkatapuram",
                         "coordinates": [
                             [
