@@ -411,6 +411,7 @@ const Map = () => {
 
         {showInfo && currentMarker ? (
           <InfoWindows
+            activeWard={activeWard}
             population={currentMarker.population}
             position={currentMarker.position}
             onCloseClick={handleCloseInfoWindow}
