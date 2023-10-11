@@ -9,7 +9,7 @@ const InfoWindows = React.memo(
         <h3>{title}</h3>
         <p>{address}</p>
         <p>{cuisine}</p>
-        <h3>Population Count : {population ? population : ""}</h3>
+        <h3>{population ? `Population Count : ${population}` : ""}</h3>
         {/* <p>{cuisine ? <><strong>cuisine : </strong>{cuisine}</> : ""}</p> */}
         <p>{cost ? <>Avg.Cost for 2 people  <strong style={{ color: "green" }}>₹{cost}</strong> </> : <></>}</p>
       </div>
