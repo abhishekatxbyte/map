@@ -4,6 +4,7 @@ import Work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
 import restaurants from "./../assets/restaurants.svg";
+import wardPinImage from "./../assets/ward.svg";
 import ZoneData from "./../Api/TreeData2.json"
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
@@ -34,6 +35,7 @@ const Map = () => {
   ])
 
   const activeArea = useSelector(state => state.restaurants.activeArea)
+  const activeWard = useSelector(state => state.restaurants.activeWard)
   const dispatch = useDispatch()
   const [showInfo, setShowInfo] = useState(true)
   const [check, setCheck] = useState({
@@ -216,7 +218,6 @@ const Map = () => {
             }
             else {
               circle.children.forEach(ward => {
-                console.log(ward)
                 if (ward.value === activeArea) {
                   coordinates.push(...ward.coordinates);
                 }
@@ -284,8 +285,32 @@ const Map = () => {
     "#F08080", "#E9967A", "#FA8072", "#FFA07A", "#0000FF",
     "#00FF00", "#FF0000"
   ]
+  //   {
+  //     "lat": 17.4398034224,
+  //     "lng": 78.4482900426
+  // }
 
+  function stripWard(inputString) {
+    // Define a regular expression pattern to match the ward number (e.g., Ward5)
+    const wardPattern = /\bWard\d+\b/g;
 
+    // Use the replace method to replace the ward pattern with an empty string
+    const result = inputString.replace(wardPattern, '').trim();
+
+    return result;
+  }
+  let wardPin
+  if (activeWard) {
+    wardPin = {
+      position: {
+        "lat": activeWard.lat,
+        "lng": activeWard.lng
+      },
+      title: stripWard(activeWard.ward),
+      cat: 'ward',
+      population: activeWard.population
+    }
+  }
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMap
@@ -367,10 +392,26 @@ const Map = () => {
             }}
           />
         ))}
+
+        {/* ward Data */}
+        {activeWard && <Marker
+          key={'dfdsfsdfafcsdv'}
+          position={wardPin.position}
+          onMouseOver={() => handleMarkerHover(wardPin)}
+          onClick={() => handleMarkerClick(wardPin)}
+          onMouseOut={() => handleMarkerOut(wardPin)}
+          title={wardPin.title}
+          icon={{
+            url: wardPinImage,
+            scaledSize: new window.google.maps.Size(35, 40), // Adjust size if needed
+          }}
+        />}
+
         {/* InfoWindow */}
 
         {showInfo && currentMarker ? (
           <InfoWindows
+            population={currentMarker.population}
             position={currentMarker.position}
             onCloseClick={handleCloseInfoWindow}
             title={currentMarker.title}

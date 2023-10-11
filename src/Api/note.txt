@@ -1,6 +1,0 @@
-//ward 11, is not here
-//ward 3, is not here 
-//ward 4,
-ward 13,
-ward 31 is ward 37
-ward 113 

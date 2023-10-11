@@ -2,18 +2,34 @@ import React, { useState } from 'react';
 import { TreeSelect } from 'antd';
 import './style.css'
 import Data from './../../Api/TreeData2.json'
+import wardData from './../../Api/wardData.json'
 import { useDispatch } from 'react-redux';
-import { SET_ACTIVE_AREA } from '../../Api/slice';
+import { SET_ACTIVE_AREA, SET_ACTIVE_WARD } from '../../Api/slice';
 
 const treeData = Data
 // Now, 'treeData' contains two parent nodes: 'parent 1' and 'parent 2'.
 
 const TreeSelectComponent = () => {
     const [value, setValue] = useState();
+
     const dispatch = useDispatch();
+    function findWard(wardName, wardArray) {
+        // Iterate through the array and search for the object with the matching "ward" value
+        for (let i = 0; i < wardArray.length; i++) {
+            if (wardArray[i].ward === wardName) {
+                return wardArray[i];
+            }
+        }
+
+        // If no matching ward is found, you can return a custom message or value
+        return null; // Return null or another custom value to indicate not found
+    }
 
     const onChange = (newValue) => {
+        const ward = findWard(newValue, wardData)
         setValue(newValue);
+
+        dispatch(SET_ACTIVE_WARD(ward));
         dispatch(SET_ACTIVE_AREA(newValue));
     };
 

@@ -13,6 +13,7 @@ const initialState = {
   activeMarker: null,
   selectedRadius: [],
   activeCircle: null,
+  activeWard: null,
   activeArea: ''
 };
 
@@ -33,6 +34,9 @@ const restaurantsSlice = createSlice({
     SET_CURRENT_MARKER(state, action) {
       state.currentMarker = action.payload
     },
+    SET_ACTIVE_WARD(state, action) {
+      state.activeWard = action.payload
+    },
     SET_ACTIVE_MARKER(state, action) {
       state.activeMarker = action.payload
     },
@@ -48,7 +52,7 @@ const restaurantsSlice = createSlice({
   },
 
 });
-export const { TOGGLE_MASTER, TOGGLE_NEIGHBOUR, SET_CURRENT_MARKER, TOGGLE_SHOWINFO, SET_ACTIVE_MARKER, SET_SELECTED_RADIUS, SET_ACTIVE_AREA } = restaurantsSlice.actions
+export const { TOGGLE_MASTER, TOGGLE_NEIGHBOUR, SET_ACTIVE_WARD, SET_CURRENT_MARKER, TOGGLE_SHOWINFO, SET_ACTIVE_MARKER, SET_SELECTED_RADIUS, SET_ACTIVE_AREA } = restaurantsSlice.actions
 export default restaurantsSlice.reducer;
 
 // Later, dispatch the thunk as needed in the app
