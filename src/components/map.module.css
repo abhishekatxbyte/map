@@ -1,8 +1,6 @@
 .filters {
-  position: absolute;
-  bottom: 3%;
-  right: 5%;
   display: flex;
+  flex-direction: column;
   gap: 1em;
 }
 
@@ -32,6 +30,7 @@
 /* markers */
 .marker {
   width: 25px;
+  height: 25px;
 }
 
 .places {

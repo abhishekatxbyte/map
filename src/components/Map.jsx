@@ -10,6 +10,8 @@ import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
 import { haversine } from "./Circle/calculateRadius";
+import { elastic as Menu } from "react-burger-menu"; //ELASTIC
+import { FcHome, FcFaq, FcViewDetails, FcStackOfPhotos } from "react-icons/fc";
 import {
   SET_CURRENT_MARKER,
   TOGGLE_SHOWINFO,
@@ -17,7 +19,7 @@ import {
   SET_SELECTED_RADIUS,
 } from "./../Api/slice";
 import { useDispatch, useSelector } from "react-redux";
-import TreeSelectComponent from "./TreeSelectComponent/TreeSelectComponent";
+import { Sidebar } from "./Sidebar/Sidebar";
 
 const Map = () => {
   const [map, setMap] = useState(null);
@@ -327,6 +329,7 @@ const Map = () => {
           ],
         }}
       >
+
         {tourStops && (
           <MarkerClusterer>
             {() => {
@@ -475,18 +478,19 @@ const Map = () => {
             })}
           </>
         )}
-
-
-        {/* Filters */}
-        <Controllers
+        <Sidebar SidebarData={<Controllers
           activeMarker={activeMarker}
           selectedRadius={selectedRadius}
           setActiveCircle={setActiveCircle}
           checkTear={checkTear} setCheckTear={setCheckTear}
           handleFilterClick={handleFilterClick}
-        />
-      </GoogleMap>
-    </div>
+        />} />
+
+
+        {/* Filters */}
+
+      </GoogleMap >
+    </div >
   );
 };
 
