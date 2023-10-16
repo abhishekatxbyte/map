@@ -1,9 +1,10 @@
 .tree_container {
-    position: absolute;
-    bottom: 3%;
+    /* bottom: 3%;
     left: 5%;
     display: flex;
     gap: 1em;
     width: 100%;
-    max-width: 250px;
+    max-width: 250px; */
+    padding-top: 1em;
+
 }

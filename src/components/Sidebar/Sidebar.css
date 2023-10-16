@@ -1,106 +1,11 @@
-/* Position and sizing of burger button */
-.bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 96px;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-    background: #1e328d;
-}
-
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-    background: #3d5ce5;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 54px !important;
-    width: 54px !important;
-
-    right: -85px !important;
-}
-
-.bm-cross-button button {
-    height: 54px !important;
-    width: 54px !important;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-    background: #bdc3c7;
-}
-
-/*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-.bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-}
-
-/* General sidebar styles */
-.bm-menu {
-    background: white;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-    width: max-content;
-}
-
-/* Morph shape necessary with bubble or elastic */
-.bm-morph-shape {
-    fill: #373a47;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
+.sidebar {
+    position: absolute;
+    background-color: #fff;
+    padding: 1em;
+    min-height: 100vh;
     display: flex;
+    transition: all 0.3s;
     flex-direction: column;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-/* ============= additional ================ */
-.menu-item {
-    font-size: 20px;
-    color: black;
-    margin-bottom: 30px;
-    text-align: left;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.menu-item:hover {
-    color: #50a3a2;
-}
-
-.memu-title {
-    color: black;
-    font-size: 40px;
-    margin: 10px 0 50px 0;
-    text-align: left;
-
-    /* text-decoration: underline;
-    text-underline-offset: 0.5em; */
-}
-
-.logout {
-    margin-top: auto;
-    border-top: 3px solid #808080;
-    padding-top: 15px;
 }
 
 :where(.css-dev-only-do-not-override-1ck3jst).ant-divider-horizontal {
@@ -108,5 +13,18 @@
     clear: both;
     width: 100%;
     min-width: 100%;
-    margin: -18px 0;
+    margin: auto;
+}
+
+.open {
+    transform: translateX(-100%);
+}
+
+.close {
+    transform: translateX(0%);
+}
+
+.closedSidebarMenu {
+    position: absolute;
+    top: 80px;
 }

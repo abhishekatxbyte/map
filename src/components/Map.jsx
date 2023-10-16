@@ -9,6 +9,7 @@ import ZoneData from "./../Api/TreeData2.json"
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
+import Sidebar from './Sidebar/Sidebar'
 import { haversine } from "./Circle/calculateRadius";
 import { elastic as Menu } from "react-burger-menu"; //ELASTIC
 import { FcHome, FcFaq, FcViewDetails, FcStackOfPhotos } from "react-icons/fc";
@@ -19,7 +20,6 @@ import {
   SET_SELECTED_RADIUS,
 } from "./../Api/slice";
 import { useDispatch, useSelector } from "react-redux";
-import { Sidebar } from "./Sidebar/Sidebar";
 
 const Map = () => {
   const [map, setMap] = useState(null);
