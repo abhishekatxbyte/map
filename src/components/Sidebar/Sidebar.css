@@ -2,10 +2,11 @@
     position: absolute;
     background-color: #fff;
     padding: 1em;
-    min-height: 100vh;
+    overflow: auto;
     display: flex;
     transition: all 0.3s;
     flex-direction: column;
+    height: 100%;
 }
 
 :where(.css-dev-only-do-not-override-1ck3jst).ant-divider-horizontal {
