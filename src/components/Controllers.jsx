@@ -125,7 +125,6 @@ const Controllers = ({
           <label htmlFor="vehicle3">Tier 3 = 900 mts</label>
         </div>
       </div>
-      <Divider />
       <div className={style.TierFilter}>
         <div className={style.Tiers}>
           <input
@@ -173,7 +172,6 @@ const Controllers = ({
           <label htmlFor="vehicle3">Tier 3 = 3 KM</label>
         </div>
       </div>
-      <Divider />
 
       <div className={style.placeFilter}>
         <div className={style.places}>

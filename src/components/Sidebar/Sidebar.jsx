@@ -21,11 +21,9 @@ const Sidebar = ({ SidebarData }) => {
                         <p className="memu-title">Filer by tier</p>
                         <MenuUnfoldOutlined onClick={() => setIsSideBarOpen(prev => !prev)} style={{ fontSize: '30px', color: '#222', backgroundColor: '#fff', padding: '10px', cursor: 'pointer' }} />
                     </div>
-                    <Divider />
                 </div>
                 <div>
                     {SidebarData}
-                    <Divider />
                     <p className="memu-title">search ward , zone and circles</p>
 
                     <TreeSelectComponent />
