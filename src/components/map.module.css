@@ -1,7 +1,6 @@
 .filters {
   display: flex;
   flex-direction: column;
-  gap: 1em;
 }
 
 .TierFilter {
@@ -13,6 +12,7 @@
   justify-content: center;
   flex-direction: column;
   border-bottom: 1px solid #ccc;
+  min-height: 160px;
 }
 
 .placeFilter {
@@ -23,6 +23,8 @@
   align-items: start;
   justify-content: center;
   gap: 0.2em;
+  min-height: 160px;
+
   border-bottom: 1px solid #ccc;
 }
 

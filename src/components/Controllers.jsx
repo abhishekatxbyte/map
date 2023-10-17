@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import style from "./map.module.css";
 import work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
@@ -6,7 +5,6 @@ import Educational from "./../assets/Educational.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_SELECTED_RADIUS } from "../Api/slice";
 import { Circle } from "@react-google-maps/api";
-import { Divider } from "antd";
 
 const Controllers = ({
   handleFilterClick,
@@ -80,7 +78,7 @@ const Controllers = ({
 
   return (
     <div className={style.filters}>
-
+      <p className="headerSidebar">Tiers</p>
       <div className={style.TierFilter}>
         <div className={style.Tiers}>
           <input
@@ -125,6 +123,7 @@ const Controllers = ({
           <label htmlFor="vehicle3">Tier 3 = 900 mts</label>
         </div>
       </div>
+
       <div className={style.TierFilter}>
         <div className={style.Tiers}>
           <input
@@ -172,6 +171,7 @@ const Controllers = ({
           <label htmlFor="vehicle3">Tier 3 = 3 KM</label>
         </div>
       </div>
+      <p className="headerSidebar">Building</p>
 
       <div className={style.placeFilter}>
         <div className={style.places}>

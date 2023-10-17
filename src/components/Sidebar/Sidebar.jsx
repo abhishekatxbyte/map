@@ -1,7 +1,7 @@
 import { slide as Menu } from "react-burger-menu";
 import "./Sidebar.css";
 import { MenuUnfoldOutlined } from '@ant-design/icons'
-import { Divider } from "antd";
+import { Checkbox, Divider } from "antd";
 import TreeSelectComponent from './../TreeSelectComponent/TreeSelectComponent'
 import { useState } from "react";
 
@@ -18,15 +18,26 @@ const Sidebar = ({ SidebarData }) => {
             <div className={isSideBarOpen ? 'sidebar close' : 'sidebar open'}>
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <p className="memu-title">Filer by tier</p>
+                        <span></span>
                         <MenuUnfoldOutlined onClick={() => setIsSideBarOpen(prev => !prev)} style={{ fontSize: '30px', color: '#222', backgroundColor: '#fff', padding: '10px', cursor: 'pointer' }} />
                     </div>
                 </div>
                 <div>
+
                     {SidebarData}
-                    <p className="memu-title">search ward , zone and circles</p>
+                    <p className="headerSidebar">
+                        Search <br /> Ward , Zone and Circles
+                    </p>
 
                     <TreeSelectComponent />
+                    <p className="headerSidebar">
+                        Platforms
+                    </p>
+                    <div style={{ display: 'flex', gap: '0.5em', paddingTop: '1em' }}>
+                        <Checkbox defaultChecked disabled />
+                        Zomato
+                    </div>
+
                 </div>
             </div>
         </>
