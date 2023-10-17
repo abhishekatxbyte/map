@@ -15,7 +15,7 @@ const Sidebar = ({ SidebarData }) => {
                 <MenuUnfoldOutlined style={{ fontSize: '30px', color: '#222', backgroundColor: '#fff', padding: '10px', cursor: 'pointer' }} onClick={() => setIsSideBarOpen(prev => !prev)} />
             </div>
 
-            <div className={isSideBarOpen ? 'sidebar open' : 'sidebar close'}>
+            <div className={isSideBarOpen ? 'sidebar close' : 'sidebar open'}>
                 <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <p className="memu-title">Filer by tier</p>
