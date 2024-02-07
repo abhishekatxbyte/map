@@ -1,872 +1,903 @@
 [
-    {
-        "ward": "Kapra Ward1",
-        "lat": 17.495955783116884,
-        "lng": 78.55613438961042,
-        "population": "46058"
-    },
-    {
-        "ward": "Dr AS Rao Nagar Ward2",
-        "lat": 17.48005812222222,
-        "lng": 78.56869423015873,
-        "population": "41577"
-    },
-    {
-        "ward": "Mallapur Ward5",
-        "lat": 17.444949922950812,
-        "lng": 78.57125872131147,
-        "population": "46058"
-    },
-    {
-        "ward": "Nacharam Ward6",
-        "lat": 17.427800105405403,
-        "lng": 78.55394497027028,
-        "population": "54323"
-    },
-    {
-        "ward": "Chilukanagar Ward7",
-        "lat": 17.4132137037037,
-        "lng": 78.55859576296297,
-        "population": "52287"
-    },
-    {
-        "ward": "Habsiguda Ward8",
-        "lat": 17.39976593181818,
-        "lng": 78.53638992727271,
-        "population": "49007"
-    },
-    {
-        "ward": "Ramanthapur Ward9",
-        "lat": 17.38862254814815,
-        "lng": 78.53712538518518,
-        "population": "43400"
-    },
-    {
-        "ward": "Uppal Ward10",
-        "lat": 17.3963152054054,
-        "lng": 78.56007642702703,
-        "population": "54249"
-    },
-    {
-        "ward": "Mansoorabad Ward12",
-        "lat": 17.34329878857143,
-        "lng": 78.58272313142857,
-        "population": "51380"
-    },
-    {
-        "ward": "BN Reddy Nagar Ward14",
-        "lat": 17.319425711111112,
-        "lng": 78.57085642222222,
-        "population": "51385"
-    },
-    {
-        "ward": "Vanasthalipuram Ward15",
-        "lat": 17.335244676190477,
-        "lng": 78.55910782857143,
-        "population": "42589"
-    },
-    {
-        "ward": "Hastinapuram Ward16",
-        "lat": 78.5179996,
-        "lng": 17.3397114,
-        "population": "41759"
-    },
-    {
-        "ward": "Champapet Ward17",
-        "lat": 17.343846037499997,
-        "lng": 78.523698909375,
-        "population": "48978"
-    },
-    {
-        "ward": "Lingojiguda Ward18",
-        "lat": 17.3497482625,
-        "lng": 78.53906406875,
-        "population": "47246"
-    },
-    {
-        "ward": " Saroornagar Ward19",
-        "lat": 17.362311292592594,
-        "lng": 78.53898794444447,
-        "population": "59467"
-    },
-    {
-        "ward": "Rama Krishna Puram Ward20",
-        "lat": 17.360821108695653,
-        "lng": 78.55006652173914,
-        "population": "54408"
-    },
-    {
-        "ward": "Kothapet Ward21",
-        "lat": 17.369707010810814,
-        "lng": 78.54891637297297,
-        "population": "45521"
-    },
-    {
-        "ward": "Chaitanyapuri Ward22",
-        "lat": 17.373966200000005,
-        "lng": 78.53509790322583,
-        "population": "43110"
-    },
-    {
-        "ward": "Gaddiannaram Ward23",
-        "lat": 17.363272729629628,
-        "lng": 78.52916965555556,
-        "population": "46815"
-    },
-    {
-        "ward": "Saidabad Ward24",
-        "lat": 17.36256448148148,
-        "lng": 78.51465866296297,
-        "population": "56199"
-    },
-    {
-        "ward": "Moosrambagh Ward25",
-        "lat": 17.37247536764706,
-        "lng": 78.51823597058821,
-        "population": "57098"
-    },
-    {
-        "ward": "Old Malakpet Ward26",
-        "lat": 17.37913518695652,
-        "lng": 78.50703083478263,
-        "population": "54502"
-    },
-    {
-        "ward": "Akberbagh Ward27",
-        "lat": 17.368907364000002,
-        "lng": 78.504134232,
-        "population": "43865"
-    },
-    {
-        "ward": "Azampura Ward28",
-        "lat": 17.373020827586206,
-        "lng": 78.49246586551723,
-        "population": "47774"
-    },
-    {
-        "ward": "Chawani Ward29",
-        "lat": 17.36511322173913,
-        "lng": 78.49741575217391,
-        "population": "46934"
-    },
-    {
-        "ward": "Dabeerpura Ward30",
-        "lat": 17.369802537837835,
-        "lng": 78.48638535675676,
-        "population": "50879"
-    },
-    {
-        "ward": "Rein Bazar Ward31",
-        "lat": 17.358185047826083,
-        "lng": 78.49016761304347,
-        "population": "42718"
-    },
-    {
-        "ward": "Talabchanchalam Ward34",
-        "lat": 17.351973152941177,
-        "lng": 78.48619553529412,
-        "population": "44968"
-    },
-    {
-        "ward": "Gowlipura Ward35",
-        "lat": 17.3456544875,
-        "lng": 78.47814798437498,
-        "population": "48730"
-    },
-    {
-        "ward": "Kurmaguda Ward37",
-        "lat": 17.355351824137934,
-        "lng": 78.49789510344826,
-        "population": "54683"
-    },
-    {
-        "ward": "IS SADAN Ward38",
-        "lat": 17.35176436129032,
-        "lng": 78.51672340645162,
-        "population": "51268"
-    },
-    {
-        "ward": "Santosh Nagar Ward39",
-        "lat": 17.349963542424245,
-        "lng": 78.50096867575759,
-        "population": "47240"
-    },
-    {
-        "ward": "Lalithbagh Ward36",
-        "lat": 17.346371952,
-        "lng": 78.490853452,
-        "population": "37692"
-    },
-    {
-        "ward": "Riyasath Nagar Ward40",
-        "lat": 17.342821314814817,
-        "lng": 78.49609777777779,
-        "population": "41622"
-    },
-    {
-        "ward": "Kanchanbagh Ward41",
-        "lat": 17.32469346153846,
-        "lng": 78.49566505692307,
-        "population": "43110"
-    },
-    {
-        "ward": "Barkas Ward42",
-        "lat": 17.31717484482759,
-        "lng": 78.47486252758621,
-        "population": "41075"
-    },
-    {
-        "ward": "Chandrayangutta Ward43",
-        "lat": 17.32218220677966,
-        "lng": 78.47951956101697,
-        "population": "49090"
-    },
-    {
-        "ward": "Uppuguda Ward44",
-        "lat": 17.33555565416667,
-        "lng": 78.48501645833333,
-        "population": "44466"
-    },
-    {
-        "ward": "Jangammet Ward45",
-        "lat": 17.335738162857144,
-        "lng": 78.47438422,
-        "population": "46025"
-    },
-    {
-        "ward": "Pathergatti Ward32",
-        "lat": 17.36472007272727,
-        "lng": 78.48137577575756,
-        "population": "59059"
-    },
-    {
-        "ward": "Moghalpura Ward33",
-        "lat": 17.35308993636363,
-        "lng": 78.47756401818181,
-        "population": "32998"
-    },
-    {
-        "ward": "Shalibanda Ward48",
-        "lat": 17.346067612195117,
-        "lng": 78.46966790975611,
-        "population": "45752"
-    },
-    {
-        "ward": "Ghansi Bazar Ward49",
-        "lat": 17.362310225925928,
-        "lng": 78.46968531111109,
-        "population": "49042"
-    },
-    {
-        "ward": "Puranapul Ward52",
-        "lat": 17.360586552380955,
-        "lng": 78.4633902761905,
-        "population": "37546"
-    },
-    {
-        "ward": "Falaknuma Ward46",
-        "lat": 17.327919797368416,
-        "lng": 78.46580491315791,
-        "population": "47735"
-    },
-    {
-        "ward": "Nawab Saheb Kunta Ward47",
-        "lat": 17.334971832258066,
-        "lng": 78.46180254193547,
-        "population": "36819"
-    },
-    {
-        "ward": "Doodbowli Ward53",
-        "lat": 17.355044365384614,
-        "lng": 78.45969676153845,
-        "population": "37652"
-    },
-    {
-        "ward": "Jahanuma Ward54",
-        "lat": 17.3406317032258,
-        "lng": 78.45753138064518,
-        "population": "46949"
-    },
-    {
-        "ward": "Ramnaspura Ward55",
-        "lat": 17.347789,
-        "lng": 78.44755650833334,
-        "population": "37802"
-    },
-    {
-        "ward": "Kishanbagh Ward56",
-        "lat": 17.35802590277778,
-        "lng": 78.44444983333331,
-        "population": "43343"
-    },
-    {
-        "ward": "Rajendra Nagar Ward60",
-        "lat": 17.335965174712644,
-        "lng": 78.41068913563218,
-        "population": "47240"
-    },
-    {
-        "ward": "Attapur Ward61",
-        "lat": 17.360780095121953,
-        "lng": 78.42849848048782,
-        "population": "55655"
-    },
-    {
-        "ward": "Suleman Nagar Ward57",
-        "lat": 17.34430684505495,
-        "lng": 78.43142371868133,
-        "population": "46341"
-    },
-    {
-        "ward": "Shastri puram Ward58",
-        "lat": 17.329925417441853,
-        "lng": 78.44934310348836,
-        "population": "38618"
-    },
-    {
-        "ward": "Mailardevpally Ward59",
-        "lat": 17.313354639583334,
-        "lng": 78.42712438541666,
-        "population": "79290"
-    },
-    {
-        "ward": "Mehdipatnam Ward70",
-        "lat": 17.391575225925923,
-        "lng": 78.43761857037036,
-        "population": "34238"
-    },
-    {
-        "ward": "Gudimalkapur Ward71",
-        "lat": 17.38315868,
-        "lng": 78.43530158222222,
-        "population": "51164"
-    },
-    {
-        "ward": "Asif Nagar Ward72",
-        "lat": 17.38417376206896,
-        "lng": 78.44572183793102,
-        "population": "51831"
-    },
-    {
-        "ward": "Vijayanagar Colony Ward73",
-        "lat": 17.39533724634147,
-        "lng": 78.45087242682926,
-        "population": "54145"
-    },
-    {
-        "ward": "Ahmed Nagar Ward74",
-        "lat": 17.4027654137931,
-        "lng": 78.44324776551726,
-        "population": "53967"
-    },
-    {
-        "ward": "Red Hills Ward75",
-        "lat": 17.399556304166666,
-        "lng": 78.46044781458333,
-        "population": "44895"
-    },
-    {
-        "ward": "Mallepally Ward76",
-        "lat": 17.38883695652174,
-        "lng": 78.45908557826087,
-        "population": "57302"
-    },
-    {
-        "ward": "Ziaguda Ward62",
-        "lat": 17.36841495,
-        "lng": 78.44911358666664,
-        "population": "41965"
-    },
-    {
-        "ward": "Karwan Ward65",
-        "lat": 17.374533198181823,
-        "lng": 78.44063579454544,
-        "population": "50723"
-    },
-    {
-        "ward": "Langer House Ward66",
-        "lat": 17.381045143478257,
-        "lng": 78.39776456086958,
-        "population": "51048"
-    },
-    {
-        "ward": "Golconda Ward67",
-        "lat": 17.387470289743597,
-        "lng": 78.41463193589746,
-        "population": "54652"
-    },
-    {
-        "ward": "Tolichowki Ward68",
-        "lat": 17.39273385,
-        "lng": 78.40908780588235,
-        "population": "39540"
-    },
-    {
-        "ward": "Nanalnagar Ward69",
-        "lat": 17.396867774285717,
-        "lng": 78.42552049428569,
-        "population": "50912"
-    },
-    {
-        "ward": "Begum Bazar Ward50",
-        "lat": 17.375127320588238,
-        "lng": 78.47426741764706,
-        "population": "45304"
-    },
-    {
-        "ward": "Gosha Mahal Ward51",
-        "lat": 17.375694022222216,
-        "lng": 78.46506914074074,
-        "population": "41896"
-    },
-    {
-        "ward": "Manghalhat Ward63",
-        "lat": 17.37689545483871,
-        "lng": 78.45657546451609,
-        "population": "46711"
-    },
-    {
-        "ward": "Dattathreyanagar Ward64",
-        "lat": 17.376488471999995,
-        "lng": 78.45216219199999,
-        "population": "29959"
-    },
-    {
-        "ward": "Jambagh(Nampally) Ward77",
-        "lat": 17.38538166774193,
-        "lng": 78.47188697741935,
-        "population": "47258"
-    },
-    {
-        "ward": "Gunfoundry Ward78",
-        "lat": 17.394585121428573,
-        "lng": 78.47879658214285,
-        "population": "47605"
-    },
-    {
-        "ward": "Khairtabad Ward91",
-        "lat": 17.422243014159278,
-        "lng": 78.46705363628318,
-        "population": "55161"
-    },
-    {
-        "ward": "Somajiguda Ward97",
-        "lat": 17.430123717857146,
-        "lng": 78.45033002142858,
-        "population": "50502"
-    },
-    {
-        "ward": "Ameerpet Ward98",
-        "lat": 17.440507502380953,
-        "lng": 78.45109396190477,
-        "population": "48268"
-    },
-    {
-        "ward": "Sanathnagar Ward100",
-        "lat": 17.45287226,
-        "lng": 78.44330532,
-        "population": "60696"
-    },
-    {
-        "ward": "Venkateshwara Colony Ward92",
-        "lat": 17.422061048888892,
-        "lng": 78.43765212666668,
-        "population": "46013"
-    },
-    {
-        "ward": "Banjara Hills Ward93",
-        "lat": 17.410512391836733,
-        "lng": 78.43991284489795,
-        "population": "49806"
-    },
-    {
-        "ward": "Shaikpet Ward94",
-        "lat": 17.40407932391305,
-        "lng": 78.3992222717391,
-        "population": "63230"
-    },
-    {
-        "ward": "Jubilee Hills Ward95",
-        "lat": 17.426671653086416,
-        "lng": 78.41208493703704,
-        "population": "49566"
-    },
-    {
-        "ward": "Himayathnagar Ward79",
-        "lat": 17.39902944090909,
-        "lng": 78.48463272272726,
-        "population": "49515"
-    },
-    {
-        "ward": "Kachiguda Barkatpura Ward80",
-        "lat": 17.388237817391303,
-        "lng": 78.49299744347827,
-        "population": "42422"
-    },
-    {
-        "ward": "Nallakunta Ward81",
-        "lat": 17.398447809677418,
-        "lng": 78.50803979032258,
-        "population": "49711"
-    },
-    {
-        "ward": "Golnaka Ward82",
-        "lat": 17.386308146666668,
-        "lng": 78.50461397333335,
-        "population": "50979"
-    },
-    {
-        "ward": "Amberpet Ward83",
-        "lat": 17.386060159090906,
-        "lng": 78.52285465454544,
-        "population": "55934"
-    },
-    {
-        "ward": "Bagh Amberpet Ward84",
-        "lat": 17.397214599999995,
-        "lng": 78.51896871250001,
-        "population": "54438"
-    },
-    {
-        "ward": "Adikmet Ward85",
-        "lat": 17.407246423076923,
-        "lng": 78.51126192307692,
-        "population": "41888"
-    },
-    {
-        "ward": "Musheerabad Ward86",
-        "lat": 17.415483500000004,
-        "lng": 78.50810811081081,
-        "population": "46882"
-    },
-    {
-        "ward": "Ramnagar Ward87",
-        "lat": 17.407263871428572,
-        "lng": 78.5002019,
-        "population": "49460"
-    },
-    {
-        "ward": "Bholakpur Ward88",
-        "lat": 17.418684334782608,
-        "lng": 78.49435817391304,
-        "population": "53464"
-    },
-    {
-        "ward": "Gandhinagar Ward89",
-        "lat": 17.407622709090912,
-        "lng": 78.4930551090909,
-        "population": "47944"
-    },
-    {
-        "ward": "Kavadiguda Ward90",
-        "lat": 17.415633264705885,
-        "lng": 78.48606516764706,
-        "population": "51503"
-    },
-    {
-        "ward": "Neredmet Ward136",
-        "lat": 17.489234,
-        "lng": 78.5391894,
-        "population": "56092"
-    },
-    {
-        "ward": "Vinayak Nagar Ward137",
-        "lat": 17.4657092,
-        "lng": 78.54315404999998,
-        "population": "44870"
-    },
-    {
-        "ward": "Moula-Ali Ward138",
-        "lat": 17.467261454411762,
-        "lng": 78.55271004264702,
-        "population": "51244"
-    },
-    {
-        "ward": "East Anandbagh Ward139",
-        "lat": 17.453515458095232,
-        "lng": 78.54663190285714,
-        "population": "48011"
-    },
-    {
-        "ward": "Malkajgiri  Ward140",
-        "lat": 17.459782851923073,
-        "lng": 78.5367709576923,
-        "population": "41585"
-    },
-    {
-        "ward": "Gautham Nagar Ward141",
-        "lat": 17.45048314042553,
-        "lng": 78.52886014468085,
-        "population": "52177"
-    },
-    {
-        "ward": "Addagutta Ward142",
-        "lat": 17.439130693220342,
-        "lng": 78.51889557627116,
-        "population": "48945"
-    },
-    {
-        "ward": "Tarnaka Ward143",
-        "lat": 17.4425315,
-        "lng": 78.5409245,
-        "population": "62337"
-    },
-    {
-        "ward": "Mettuguda Ward144",
-        "lat": 17.431789196296297,
-        "lng": 78.51866530000001,
-        "population": "39217"
-    },
-    {
-        "ward": "Sitaphalmandi Ward145",
-        "lat": 17.424499745652177,
-        "lng": 78.51446690434783,
-        "population": "61706"
-    },
-    {
-        "ward": "Boudha Nagar Ward146",
-        "lat": 17.415682063333332,
-        "lng": 78.51439507333335,
-        "population": "39509"
-    },
-    {
-        "ward": "Bansilalpet Ward147",
-        "lat": 17.42639142321429,
-        "lng": 78.50306656964287,
-        "population": "61962"
-    },
-    {
-        "ward": "Ramgopal Pet Ward148",
-        "lat": 17.433007122077917,
-        "lng": 78.48763825974025,
-        "population": "35830"
-    },
-    {
-        "ward": "Begumpet Ward149",
-        "lat": 17.441850243298976,
-        "lng": 78.47270921855669,
-        "population": "50849"
-    },
-    {
-        "ward": "Monda Market Ward150",
-        "lat": 17.439543241071426,
-        "lng": 78.50435117857144,
-        "population": "49260"
-    },
-    {
-        "ward": "Yousufguda Ward96",
-        "lat": 17.43630783095238,
-        "lng": 78.42496501904763,
-        "population": "60020"
-    },
-    {
-        "ward": "Vengal Rao Nagar Ward99",
-        "lat": 17.441348272,
-        "lng": 78.433287196,
-        "population": "48949"
-    },
-    {
-        "ward": "Erragadda Ward101",
-        "lat": 17.45239789722222,
-        "lng": 78.42654080555555,
-        "population": "55862"
-    },
-    {
-        "ward": "Rahamath Nagar Ward102",
-        "lat": 17.44605442173913,
-        "lng": 78.41883464782607,
-        "population": "64290"
-    },
-    {
-        "ward": "Borabanda Ward103",
-        "lat": 17.45000562352941,
-        "lng": 78.41166083529413,
-        "population": "45357"
-    },
-    {
-        "ward": "Kondapur Ward104",
-        "lat": 17.44196243250001,
-        "lng": 78.37951746875,
-        "population": "69198"
-    },
-    {
-        "ward": "Gachibowli Ward105",
-        "lat": 17.438649164485994,
-        "lng": 78.34661034299063,
-        "population": "50439"
-    },
-    {
-        "ward": "Serilingampally Ward106",
-        "lat": 17.474497375000002,
-        "lng": 78.3332240965909,
-        "population": "65231"
-    },
-    {
-        "ward": "Madhapur Ward107",
-        "lat": 17.467687492771084,
-        "lng": 78.37948114337348,
-        "population": "57827"
-    },
-    {
-        "ward": "Miyapur Ward108",
-        "lat": 17.509318160000003,
-        "lng": 78.35768028285713,
-        "population": "57822"
-    },
-    {
-        "ward": "Hafeezpet Ward109",
-        "lat": 17.48953073111111,
-        "lng": 78.34402820888889,
-        "population": "70305"
-    },
-    {
-        "ward": "Chandanagar Ward110",
-        "lat": 17.4998555882353,
-        "lng": 78.32718377500001,
-        "population": "59851"
-    },
-    {
-        "ward": "Bharathinagar(P) Ward111",
-        "lat": 17.5040403,
-        "lng": 78.3037234,
-        "population": "31737"
-    },
-    {
-        "ward": "Ramachandrapuram Ward112",
-        "lat": 17.509255450980394,
-        "lng": 78.29921042549022,
-        "population": "27998"
-    },
-    {
-        "ward": "KPHB Colony Ward114",
-        "lat": 17.48676504146341,
-        "lng": 78.38350770487807,
-        "population": "52094"
-    },
-    {
-        "ward": "Balajinagar Ward115",
-        "lat": 17.475088333333332,
-        "lng": 78.40692449555556,
-        "population": "53827"
-    },
-    {
-        "ward": "Allapur Ward116",
-        "lat": 17.460957497297294,
-        "lng": 78.40094524054054,
-        "population": "61108"
-    },
-    {
-        "ward": "Moosapet Ward117",
-        "lat": 17.46001724318182,
-        "lng": 78.42421030454547,
-        "population": "44166"
-    },
-    {
-        "ward": "Fathe Darwaza Ward118",
-        "lat": 17.460445122222218,
-        "lng": 78.44542831555556,
-        "population": "52770"
-    },
-    {
-        "ward": "Old Bowenpally Ward119",
-        "lat": 17.479951889130433,
-        "lng": 78.48739822391302,
-        "population": "57233"
-    },
-    {
-        "ward": "Balanagar Ward120",
-        "lat": 17.47994097999999,
-        "lng": 78.44286806888887,
-        "population": "42899"
-    },
-    {
-        "ward": "Kukatpally Ward121",
-        "lat": 17.48715659183674,
-        "lng": 78.42371025102045,
-        "population": "48355"
-    },
-    {
-        "ward": "Vivekananda Nagar Colony Ward122",
-        "lat": 17.494941051612905,
-        "lng": 78.4146751483871,
-        "population": "54115"
-    },
-    {
-        "ward": "Hydernagar Ward123",
-        "lat": 17.50136408611111,
-        "lng": 78.39125120277778,
-        "population": "51156"
-    },
-    {
-        "ward": "Allwyn Colony Ward124",
-        "lat": 17.504856115625,
-        "lng": 78.4092596625,
-        "population": "60653"
-    },
-    {
-        "ward": "Rangareddy nagar Ward127",
-        "lat": 17.49005872258065,
-        "lng": 78.4381509516129,
-        "population": "40729"
-    },
-    {
-        "ward": "Subhashnagar Ward130",
-        "lat": 17.52293657592593,
-        "lng": 78.4531258,
-        "population": "67057"
-    },
-    {
-        "ward": "Qutbullapur Ward131",
-        "lat": 17.49496106969697,
-        "lng": 78.45699273636365,
-        "population": "51739"
-    },
-    {
-        "ward": "Jeedimetla Ward132",
-        "lat": 17.511038000000003,
-        "lng": 78.4718883135593,
-        "population": "56147"
-    },
-    {
-        "ward": "Gajula Ramaram Ward125",
-        "lat": 17.52604517636364,
-        "lng": 78.41727315090907,
-        "population": "55411"
-    },
-    {
-        "ward": "Jagadgirigutta Ward126",
-        "lat": 17.507060836111112,
-        "lng": 78.4258665888889,
-        "population": "45439"
-    },
-    {
-        "ward": "Chintal Ward128",
-        "lat": 17.503767970588235,
-        "lng": 78.43907261470586,
-        "population": "34656"
-    },
-    {
-        "ward": "Suraram Ward129",
-        "lat": 17.53305422857143,
-        "lng": 78.43070543571427,
-        "population": "52599"
-    },
-    {
-        "ward": "Macha Bollaram Ward133",
-        "lat": 17.5368337,
-        "lng": 78.5064232,
-        "population": "51571"
-    },
-    {
-        "ward": "Alwal Ward134",
-        "lat": 17.499848763265305,
-        "lng": 78.5004236346939,
-        "population": "52455"
-    },
-    {
-        "ward": "Venkatapuram Ward135",
-        "lat": 17.486025560563377,
-        "lng": 78.49716760281689,
-        "population": "40753"
-    }
+  {
+    "ward": "Kapra Ward1",
+    "lat": 17.495955783116884,
+    "lng": 78.55613438961042,
+    "population": "46058"
+  },
+  {
+    "ward": "Dr AS Rao Nagar Ward2",
+    "lat": 17.48005812222222,
+    "lng": 78.56869423015873,
+    "population": "41577"
+  },
+  {
+    "ward": "Cherlapally Ward3",
+    "lat": 17.4695,
+    "lng": 78.5968,
+    "population": "73171"
+  },
+  {
+    "ward": "Meerpet H.B. Colony Ward4",
+    "lat": 17.4531,
+    "lng": 78.5645,
+    "population": "50,000"
+  },
+  {
+    "ward": "Mallapur Ward5",
+    "lat": 17.444949922950812,
+    "lng": 78.57125872131147,
+    "population": "46058"
+  },
+  {
+    "ward": "Nacharam Ward6",
+    "lat": 17.427800105405403,
+    "lng": 78.55394497027028,
+    "population": "54323"
+  },
+  {
+    "ward": "Chilukanagar Ward7",
+    "lat": 17.4132137037037,
+    "lng": 78.55859576296297,
+    "population": "52287"
+  },
+  {
+    "ward": "Habsiguda Ward8",
+    "lat": 17.39976593181818,
+    "lng": 78.53638992727271,
+    "population": "49007"
+  },
+  {
+    "ward": "Ramanthapur Ward9",
+    "lat": 17.38862254814815,
+    "lng": 78.53712538518518,
+    "population": "43400"
+  },
+  {
+    "ward": "Uppal Ward10",
+    "lat": 17.3963152054054,
+    "lng": 78.56007642702703,
+    "population": "54249"
+  },
+  {
+    "ward": "Nagole Ward11",
+    "lat": 17.3715,
+    "lng": 78.5695,
+    "population": "54249"
+  },
+  {
+    "ward": "Mansoorabad Ward12",
+    "lat": 17.34329878857143,
+    "lng": 78.58272313142857,
+    "population": "51380"
+  },
+
+  {
+    "ward": "Hayath Nagar Ward13",
+    "lat": 17.3271,
+    "lng": 78.6053,
+    "population": "51380"
+  },
+  {
+    "ward": "BN Reddy Nagar Ward14",
+    "lat": 17.319425711111112,
+    "lng": 78.57085642222222,
+    "population": "51385"
+  },
+  {
+    "ward": "Vanasthalipuram Ward15",
+    "lat": 17.335244676190477,
+    "lng": 78.55910782857143,
+    "population": "42589"
+  },
+  {
+    "ward": "Hastinapuram Ward16",
+    "lat": 78.5179996,
+    "lng": 17.3397114,
+    "population": "41759"
+  },
+  {
+    "ward": "Champapet Ward17",
+    "lat": 17.343846037499997,
+    "lng": 78.523698909375,
+    "population": "48978"
+  },
+  {
+    "ward": "Lingojiguda Ward18",
+    "lat": 17.3497482625,
+    "lng": 78.53906406875,
+    "population": "47246"
+  },
+  {
+    "ward": " Saroornagar Ward19",
+    "lat": 17.362311292592594,
+    "lng": 78.53898794444447,
+    "population": "59467"
+  },
+  {
+    "ward": "Rama Krishna Puram Ward20",
+    "lat": 17.360821108695653,
+    "lng": 78.55006652173914,
+    "population": "54408"
+  },
+  {
+    "ward": "Kothapet Ward21",
+    "lat": 17.369707010810814,
+    "lng": 78.54891637297297,
+    "population": "45521"
+  },
+  {
+    "ward": "Chaitanyapuri Ward22",
+    "lat": 17.373966200000005,
+    "lng": 78.53509790322583,
+    "population": "43110"
+  },
+  {
+    "ward": "Gaddiannaram Ward23",
+    "lat": 17.363272729629628,
+    "lng": 78.52916965555556,
+    "population": "46815"
+  },
+  {
+    "ward": "Saidabad Ward24",
+    "lat": 17.36256448148148,
+    "lng": 78.51465866296297,
+    "population": "56199"
+  },
+  {
+    "ward": "Moosrambagh Ward25",
+    "lat": 17.37247536764706,
+    "lng": 78.51823597058821,
+    "population": "57098"
+  },
+  {
+    "ward": "Old Malakpet Ward26",
+    "lat": 17.37913518695652,
+    "lng": 78.50703083478263,
+    "population": "54502"
+  },
+  {
+    "ward": "Akberbagh Ward27",
+    "lat": 17.368907364000002,
+    "lng": 78.504134232,
+    "population": "43865"
+  },
+  {
+    "ward": "Azampura Ward28",
+    "lat": 17.373020827586206,
+    "lng": 78.49246586551723,
+    "population": "47774"
+  },
+  {
+    "ward": "Chawani Ward29",
+    "lat": 17.36511322173913,
+    "lng": 78.49741575217391,
+    "population": "46934"
+  },
+  {
+    "ward": "Dabeerpura Ward30",
+    "lat": 17.369802537837835,
+    "lng": 78.48638535675676,
+    "population": "50879"
+  },
+  {
+    "ward": "Rein Bazar Ward31",
+    "lat": 17.358185047826083,
+    "lng": 78.49016761304347,
+    "population": "42718"
+  },
+  {
+    "ward": "Talabchanchalam Ward34",
+    "lat": 17.351973152941177,
+    "lng": 78.48619553529412,
+    "population": "44968"
+  },
+  {
+    "ward": "Gowlipura Ward35",
+    "lat": 17.3456544875,
+    "lng": 78.47814798437498,
+    "population": "48730"
+  },
+  {
+    "ward": "Kurmaguda Ward37",
+    "lat": 17.355351824137934,
+    "lng": 78.49789510344826,
+    "population": "54683"
+  },
+  {
+    "ward": "IS SADAN Ward38",
+    "lat": 17.35176436129032,
+    "lng": 78.51672340645162,
+    "population": "51268"
+  },
+  {
+    "ward": "Santosh Nagar Ward39",
+    "lat": 17.349963542424245,
+    "lng": 78.50096867575759,
+    "population": "47240"
+  },
+  {
+    "ward": "Lalithbagh Ward36",
+    "lat": 17.346371952,
+    "lng": 78.490853452,
+    "population": "37692"
+  },
+  {
+    "ward": "Riyasath Nagar Ward40",
+    "lat": 17.342821314814817,
+    "lng": 78.49609777777779,
+    "population": "41622"
+  },
+  {
+    "ward": "Kanchanbagh Ward41",
+    "lat": 17.32469346153846,
+    "lng": 78.49566505692307,
+    "population": "43110"
+  },
+  {
+    "ward": "Barkas Ward42",
+    "lat": 17.31717484482759,
+    "lng": 78.47486252758621,
+    "population": "41075"
+  },
+  {
+    "ward": "Chandrayangutta Ward43",
+    "lat": 17.32218220677966,
+    "lng": 78.47951956101697,
+    "population": "49090"
+  },
+  {
+    "ward": "Uppuguda Ward44",
+    "lat": 17.33555565416667,
+    "lng": 78.48501645833333,
+    "population": "44466"
+  },
+  {
+    "ward": "Jangammet Ward45",
+    "lat": 17.335738162857144,
+    "lng": 78.47438422,
+    "population": "46025"
+  },
+  {
+    "ward": "Pathergatti Ward32",
+    "lat": 17.36472007272727,
+    "lng": 78.48137577575756,
+    "population": "59059"
+  },
+  {
+    "ward": "Moghalpura Ward33",
+    "lat": 17.35308993636363,
+    "lng": 78.47756401818181,
+    "population": "32998"
+  },
+  {
+    "ward": "Shalibanda Ward48",
+    "lat": 17.346067612195117,
+    "lng": 78.46966790975611,
+    "population": "45752"
+  },
+  {
+    "ward": "Ghansi Bazar Ward49",
+    "lat": 17.362310225925928,
+    "lng": 78.46968531111109,
+    "population": "49042"
+  },
+  {
+    "ward": "Puranapul Ward52",
+    "lat": 17.360586552380955,
+    "lng": 78.4633902761905,
+    "population": "37546"
+  },
+  {
+    "ward": "Falaknuma Ward46",
+    "lat": 17.327919797368416,
+    "lng": 78.46580491315791,
+    "population": "47735"
+  },
+  {
+    "ward": "Nawab Saheb Kunta Ward47",
+    "lat": 17.334971832258066,
+    "lng": 78.46180254193547,
+    "population": "36819"
+  },
+  {
+    "ward": "Doodbowli Ward53",
+    "lat": 17.355044365384614,
+    "lng": 78.45969676153845,
+    "population": "37652"
+  },
+  {
+    "ward": "Jahanuma Ward54",
+    "lat": 17.3406317032258,
+    "lng": 78.45753138064518,
+    "population": "46949"
+  },
+  {
+    "ward": "Ramnaspura Ward55",
+    "lat": 17.347789,
+    "lng": 78.44755650833334,
+    "population": "37802"
+  },
+  {
+    "ward": "Kishanbagh Ward56",
+    "lat": 17.35802590277778,
+    "lng": 78.44444983333331,
+    "population": "43343"
+  },
+  {
+    "ward": "Rajendra Nagar Ward60",
+    "lat": 17.335965174712644,
+    "lng": 78.41068913563218,
+    "population": "47240"
+  },
+  {
+    "ward": "Attapur Ward61",
+    "lat": 17.360780095121953,
+    "lng": 78.42849848048782,
+    "population": "55655"
+  },
+  {
+    "ward": "Suleman Nagar Ward57",
+    "lat": 17.34430684505495,
+    "lng": 78.43142371868133,
+    "population": "46341"
+  },
+  {
+    "ward": "Shastri puram Ward58",
+    "lat": 17.329925417441853,
+    "lng": 78.44934310348836,
+    "population": "38618"
+  },
+  {
+    "ward": "Mailardevpally Ward59",
+    "lat": 17.313354639583334,
+    "lng": 78.42712438541666,
+    "population": "79290"
+  },
+  {
+    "ward": "Mehdipatnam Ward70",
+    "lat": 17.391575225925923,
+    "lng": 78.43761857037036,
+    "population": "34238"
+  },
+  {
+    "ward": "Gudimalkapur Ward71",
+    "lat": 17.38315868,
+    "lng": 78.43530158222222,
+    "population": "51164"
+  },
+  {
+    "ward": "Asif Nagar Ward72",
+    "lat": 17.38417376206896,
+    "lng": 78.44572183793102,
+    "population": "51831"
+  },
+  {
+    "ward": "Vijayanagar Colony Ward73",
+    "lat": 17.39533724634147,
+    "lng": 78.45087242682926,
+    "population": "54145"
+  },
+  {
+    "ward": "Ahmed Nagar Ward74",
+    "lat": 17.4027654137931,
+    "lng": 78.44324776551726,
+    "population": "53967"
+  },
+  {
+    "ward": "Red Hills Ward75",
+    "lat": 17.399556304166666,
+    "lng": 78.46044781458333,
+    "population": "44895"
+  },
+  {
+    "ward": "Mallepally Ward76",
+    "lat": 17.38883695652174,
+    "lng": 78.45908557826087,
+    "population": "57302"
+  },
+  {
+    "ward": "Ziaguda Ward62",
+    "lat": 17.36841495,
+    "lng": 78.44911358666664,
+    "population": "41965"
+  },
+  {
+    "ward": "Karwan Ward65",
+    "lat": 17.374533198181823,
+    "lng": 78.44063579454544,
+    "population": "50723"
+  },
+  {
+    "ward": "Langer House Ward66",
+    "lat": 17.381045143478257,
+    "lng": 78.39776456086958,
+    "population": "51048"
+  },
+  {
+    "ward": "Golconda Ward67",
+    "lat": 17.387470289743597,
+    "lng": 78.41463193589746,
+    "population": "54652"
+  },
+  {
+    "ward": "Tolichowki Ward68",
+    "lat": 17.39273385,
+    "lng": 78.40908780588235,
+    "population": "39540"
+  },
+  {
+    "ward": "Nanalnagar Ward69",
+    "lat": 17.396867774285717,
+    "lng": 78.42552049428569,
+    "population": "50912"
+  },
+  {
+    "ward": "Begum Bazar Ward50",
+    "lat": 17.375127320588238,
+    "lng": 78.47426741764706,
+    "population": "45304"
+  },
+  {
+    "ward": "Gosha Mahal Ward51",
+    "lat": 17.375694022222216,
+    "lng": 78.46506914074074,
+    "population": "41896"
+  },
+  {
+    "ward": "Manghalhat Ward63",
+    "lat": 17.37689545483871,
+    "lng": 78.45657546451609,
+    "population": "46711"
+  },
+  {
+    "ward": "Dattathreyanagar Ward64",
+    "lat": 17.376488471999995,
+    "lng": 78.45216219199999,
+    "population": "29959"
+  },
+  {
+    "ward": "Jambagh(Nampally) Ward77",
+    "lat": 17.38538166774193,
+    "lng": 78.47188697741935,
+    "population": "47258"
+  },
+  {
+    "ward": "Gunfoundry Ward78",
+    "lat": 17.394585121428573,
+    "lng": 78.47879658214285,
+    "population": "47605"
+  },
+  {
+    "ward": "Khairtabad Ward91",
+    "lat": 17.422243014159278,
+    "lng": 78.46705363628318,
+    "population": "55161"
+  },
+  {
+    "ward": "Somajiguda Ward97",
+    "lat": 17.430123717857146,
+    "lng": 78.45033002142858,
+    "population": "50502"
+  },
+  {
+    "ward": "Ameerpet Ward98",
+    "lat": 17.440507502380953,
+    "lng": 78.45109396190477,
+    "population": "48268"
+  },
+  {
+    "ward": "Sanathnagar Ward100",
+    "lat": 17.45287226,
+    "lng": 78.44330532,
+    "population": "60696"
+  },
+  {
+    "ward": "Venkateshwara Colony Ward92",
+    "lat": 17.422061048888892,
+    "lng": 78.43765212666668,
+    "population": "46013"
+  },
+  {
+    "ward": "Banjara Hills Ward93",
+    "lat": 17.410512391836733,
+    "lng": 78.43991284489795,
+    "population": "49806"
+  },
+  {
+    "ward": "Shaikpet Ward94",
+    "lat": 17.40407932391305,
+    "lng": 78.3992222717391,
+    "population": "63230"
+  },
+  {
+    "ward": "Jubilee Hills Ward95",
+    "lat": 17.426671653086416,
+    "lng": 78.41208493703704,
+    "population": "49566"
+  },
+  {
+    "ward": "Himayathnagar Ward79",
+    "lat": 17.39902944090909,
+    "lng": 78.48463272272726,
+    "population": "49515"
+  },
+  {
+    "ward": "Kachiguda Barkatpura Ward80",
+    "lat": 17.388237817391303,
+    "lng": 78.49299744347827,
+    "population": "42422"
+  },
+  {
+    "ward": "Nallakunta Ward81",
+    "lat": 17.398447809677418,
+    "lng": 78.50803979032258,
+    "population": "49711"
+  },
+  {
+    "ward": "Golnaka Ward82",
+    "lat": 17.386308146666668,
+    "lng": 78.50461397333335,
+    "population": "50979"
+  },
+  {
+    "ward": "Amberpet Ward83",
+    "lat": 17.386060159090906,
+    "lng": 78.52285465454544,
+    "population": "55934"
+  },
+  {
+    "ward": "Bagh Amberpet Ward84",
+    "lat": 17.397214599999995,
+    "lng": 78.51896871250001,
+    "population": "54438"
+  },
+  {
+    "ward": "Adikmet Ward85",
+    "lat": 17.407246423076923,
+    "lng": 78.51126192307692,
+    "population": "41888"
+  },
+  {
+    "ward": "Musheerabad Ward86",
+    "lat": 17.415483500000004,
+    "lng": 78.50810811081081,
+    "population": "46882"
+  },
+  {
+    "ward": "Ramnagar Ward87",
+    "lat": 17.407263871428572,
+    "lng": 78.5002019,
+    "population": "49460"
+  },
+  {
+    "ward": "Bholakpur Ward88",
+    "lat": 17.418684334782608,
+    "lng": 78.49435817391304,
+    "population": "53464"
+  },
+  {
+    "ward": "Gandhinagar Ward89",
+    "lat": 17.407622709090912,
+    "lng": 78.4930551090909,
+    "population": "47944"
+  },
+  {
+    "ward": "Kavadiguda Ward90",
+    "lat": 17.415633264705885,
+    "lng": 78.48606516764706,
+    "population": "51503"
+  },
+  {
+    "ward": "Neredmet Ward136",
+    "lat": 17.489234,
+    "lng": 78.5391894,
+    "population": "56092"
+  },
+  {
+    "ward": "Vinayak Nagar Ward137",
+    "lat": 17.4657092,
+    "lng": 78.54315404999998,
+    "population": "44870"
+  },
+  {
+    "ward": "Moula-Ali Ward138",
+    "lat": 17.467261454411762,
+    "lng": 78.55271004264702,
+    "population": "51244"
+  },
+  {
+    "ward": "East Anandbagh Ward139",
+    "lat": 17.453515458095232,
+    "lng": 78.54663190285714,
+    "population": "48011"
+  },
+  {
+    "ward": "Malkajgiri  Ward140",
+    "lat": 17.459782851923073,
+    "lng": 78.5367709576923,
+    "population": "41585"
+  },
+  {
+    "ward": "Gautham Nagar Ward141",
+    "lat": 17.45048314042553,
+    "lng": 78.52886014468085,
+    "population": "52177"
+  },
+  {
+    "ward": "Addagutta Ward142",
+    "lat": 17.439130693220342,
+    "lng": 78.51889557627116,
+    "population": "48945"
+  },
+  {
+    "ward": "Tarnaka Ward143",
+    "lat": 17.4425315,
+    "lng": 78.5409245,
+    "population": "62337"
+  },
+  {
+    "ward": "Mettuguda Ward144",
+    "lat": 17.431789196296297,
+    "lng": 78.51866530000001,
+    "population": "39217"
+  },
+  {
+    "ward": "Sitaphalmandi Ward145",
+    "lat": 17.424499745652177,
+    "lng": 78.51446690434783,
+    "population": "61706"
+  },
+  {
+    "ward": "Boudha Nagar Ward146",
+    "lat": 17.415682063333332,
+    "lng": 78.51439507333335,
+    "population": "39509"
+  },
+  {
+    "ward": "Bansilalpet Ward147",
+    "lat": 17.42639142321429,
+    "lng": 78.50306656964287,
+    "population": "61962"
+  },
+  {
+    "ward": "Ramgopal Pet Ward148",
+    "lat": 17.433007122077917,
+    "lng": 78.48763825974025,
+    "population": "35830"
+  },
+  {
+    "ward": "Begumpet Ward149",
+    "lat": 17.441850243298976,
+    "lng": 78.47270921855669,
+    "population": "50849"
+  },
+  {
+    "ward": "Monda Market Ward150",
+    "lat": 17.439543241071426,
+    "lng": 78.50435117857144,
+    "population": "49260"
+  },
+  {
+    "ward": "Yousufguda Ward96",
+    "lat": 17.43630783095238,
+    "lng": 78.42496501904763,
+    "population": "60020"
+  },
+  {
+    "ward": "Vengal Rao Nagar Ward99",
+    "lat": 17.441348272,
+    "lng": 78.433287196,
+    "population": "48949"
+  },
+  {
+    "ward": "Erragadda Ward101",
+    "lat": 17.45239789722222,
+    "lng": 78.42654080555555,
+    "population": "55862"
+  },
+  {
+    "ward": "Rahamath Nagar Ward102",
+    "lat": 17.44605442173913,
+    "lng": 78.41883464782607,
+    "population": "64290"
+  },
+  {
+    "ward": "Borabanda Ward103",
+    "lat": 17.45000562352941,
+    "lng": 78.41166083529413,
+    "population": "45357"
+  },
+  {
+    "ward": "Kondapur Ward104",
+    "lat": 17.44196243250001,
+    "lng": 78.37951746875,
+    "population": "69198"
+  },
+  {
+    "ward": "Gachibowli Ward105",
+    "lat": 17.438649164485994,
+    "lng": 78.34661034299063,
+    "population": "50439"
+  },
+  {
+    "ward": "Serilingampally Ward106",
+    "lat": 17.474497375000002,
+    "lng": 78.3332240965909,
+    "population": "65231"
+  },
+  {
+    "ward": "Madhapur Ward107",
+    "lat": 17.467687492771084,
+    "lng": 78.37948114337348,
+    "population": "57827"
+  },
+  {
+    "ward": "Miyapur Ward108",
+    "lat": 17.509318160000003,
+    "lng": 78.35768028285713,
+    "population": "57822"
+  },
+  {
+    "ward": "Hafeezpet Ward109",
+    "lat": 17.48953073111111,
+    "lng": 78.34402820888889,
+    "population": "70305"
+  },
+  {
+    "ward": "Chandanagar Ward110",
+    "lat": 17.4998555882353,
+    "lng": 78.32718377500001,
+    "population": "59851"
+  },
+  {
+    "ward": "Bharathinagar(P) Ward111",
+    "lat": 17.5040403,
+    "lng": 78.3037234,
+    "population": "31737"
+  },
+  {
+    "ward": "Ramachandrapuram Ward112",
+    "lat": 17.509255450980394,
+    "lng": 78.29921042549022,
+    "population": "27998"
+  },
+  {
+    "ward": "Patancheruvu Ward113",
+    "lat": 17.5287,
+    "lng": 78.2667,
+    "population": "27998"
+  },
+  {
+    "ward": "KPHB Colony Ward114",
+    "lat": 17.48676504146341,
+    "lng": 78.38350770487807,
+    "population": "52094"
+  },
+  {
+    "ward": "Balajinagar Ward115",
+    "lat": 17.475088333333332,
+    "lng": 78.40692449555556,
+    "population": "53827"
+  },
+  {
+    "ward": "Allapur Ward116",
+    "lat": 17.460957497297294,
+    "lng": 78.40094524054054,
+    "population": "61108"
+  },
+  {
+    "ward": "Moosapet Ward117",
+    "lat": 17.46001724318182,
+    "lng": 78.42421030454547,
+    "population": "44166"
+  },
+  {
+    "ward": "Fathe Darwaza Ward118",
+    "lat": 17.460445122222218,
+    "lng": 78.44542831555556,
+    "population": "52770"
+  },
+  {
+    "ward": "Old Bowenpally Ward119",
+    "lat": 17.479951889130433,
+    "lng": 78.48739822391302,
+    "population": "57233"
+  },
+  {
+    "ward": "Balanagar Ward120",
+    "lat": 17.47994097999999,
+    "lng": 78.44286806888887,
+    "population": "42899"
+  },
+  {
+    "ward": "Kukatpally Ward121",
+    "lat": 17.48715659183674,
+    "lng": 78.42371025102045,
+    "population": "48355"
+  },
+  {
+    "ward": "Vivekananda Nagar Colony Ward122",
+    "lat": 17.494941051612905,
+    "lng": 78.4146751483871,
+    "population": "54115"
+  },
+  {
+    "ward": "Hydernagar Ward123",
+    "lat": 17.50136408611111,
+    "lng": 78.39125120277778,
+    "population": "51156"
+  },
+  {
+    "ward": "Allwyn Colony Ward124",
+    "lat": 17.504856115625,
+    "lng": 78.4092596625,
+    "population": "60653"
+  },
+  {
+    "ward": "Rangareddy nagar Ward127",
+    "lat": 17.49005872258065,
+    "lng": 78.4381509516129,
+    "population": "40729"
+  },
+  {
+    "ward": "Subhashnagar Ward130",
+    "lat": 17.52293657592593,
+    "lng": 78.4531258,
+    "population": "67057"
+  },
+  {
+    "ward": "Qutbullapur Ward131",
+    "lat": 17.49496106969697,
+    "lng": 78.45699273636365,
+    "population": "51739"
+  },
+  {
+    "ward": "Jeedimetla Ward132",
+    "lat": 17.511038000000003,
+    "lng": 78.4718883135593,
+    "population": "56147"
+  },
+  {
+    "ward": "Gajula Ramaram Ward125",
+    "lat": 17.52604517636364,
+    "lng": 78.41727315090907,
+    "population": "55411"
+  },
+  {
+    "ward": "Jagadgirigutta Ward126",
+    "lat": 17.507060836111112,
+    "lng": 78.4258665888889,
+    "population": "45439"
+  },
+  {
+    "ward": "Chintal Ward128",
+    "lat": 17.503767970588235,
+    "lng": 78.43907261470586,
+    "population": "34656"
+  },
+  {
+    "ward": "Suraram Ward129",
+    "lat": 17.53305422857143,
+    "lng": 78.43070543571427,
+    "population": "52599"
+  },
+  {
+    "ward": "Macha Bollaram Ward133",
+    "lat": 17.5368337,
+    "lng": 78.5064232,
+    "population": "51571"
+  },
+  {
+    "ward": "Alwal Ward134",
+    "lat": 17.499848763265305,
+    "lng": 78.5004236346939,
+    "population": "52455"
+  },
+  {
+    "ward": "Venkatapuram Ward135",
+    "lat": 17.486025560563377,
+    "lng": 78.49716760281689,
+    "population": "40753"
+  }
 ]

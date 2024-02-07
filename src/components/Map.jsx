@@ -34,6 +34,7 @@ import axios from "axios";
 const Map = () => {
   const [map, setMap] = useState(null);
   const [ZoneData, setZoneData] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       try {
