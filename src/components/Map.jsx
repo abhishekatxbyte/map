@@ -37,7 +37,9 @@ const Map = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        let response = await axios.get(`http://localhost:3005/api/getData`);
+        let response = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/api/getData`
+        );
         setZoneData(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
