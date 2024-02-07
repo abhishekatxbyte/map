@@ -1,15 +1,24 @@
+/* eslint-disable no-inner-declarations */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import { GoogleMap, Marker, InfoWindow, Circle, MarkerClustererF, MarkerClusterer, Polygon } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  Circle,
+  MarkerClusterer,
+  Polygon,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import Work from "./../assets/work.svg";
 import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
 import restaurants from "./../assets/restaurants.svg";
 import wardPinImage from "./../assets/ward.svg";
-import ZoneData from "./../Api/TreeData2.json"
+import ZoneData from "./../Api/TreeData2.json";
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
-import Sidebar from './Sidebar/Sidebar'
+import Sidebar from "./Sidebar/Sidebar";
 import { haversine } from "./Circle/calculateRadius";
 import { elastic as Menu } from "react-burger-menu"; //ELASTIC
 import { FcHome, FcFaq, FcViewDetails, FcStackOfPhotos } from "react-icons/fc";
@@ -25,21 +34,22 @@ const Map = () => {
   const [map, setMap] = useState(null);
   const [activeCircle, setActiveCircle] = useState(null);
   const [catData, setCatData] = useState(data);
-  const [circleDataInfo, setCircleDataInfo] = useState(false)
-  const selectedRadius = useSelector(state => state.restaurants.selectedRadius)
-  const [checkTear, setCheckTear] = useState(false)
-  const activeMarker = useSelector(state => state.restaurants.activeMarker)
-  const currentMarker = useSelector(state => state.restaurants.currentMarker)
+  const [circleDataInfo, setCircleDataInfo] = useState(false);
+  const selectedRadius = useSelector(
+    (state) => state.restaurants.selectedRadius
+  );
+  const [checkTear, setCheckTear] = useState(false);
+  const activeMarker = useSelector((state) => state.restaurants.activeMarker);
+  const currentMarker = useSelector((state) => state.restaurants.currentMarker);
 
   const [highLightedArea, setHighLightedArea] = useState([
-
     // Add more polygons if needed
-  ])
+  ]);
 
-  const activeArea = useSelector(state => state.restaurants.activeArea)
-  const activeWard = useSelector(state => state.restaurants.activeWard)
-  const dispatch = useDispatch()
-  const [showInfo, setShowInfo] = useState(true)
+  const activeArea = useSelector((state) => state.restaurants.activeArea);
+  const activeWard = useSelector((state) => state.restaurants.activeWard);
+  const dispatch = useDispatch();
+  const [showInfo, setShowInfo] = useState(true);
   const [check, setCheck] = useState({
     schools: false,
     entertainment: false,
@@ -51,7 +61,7 @@ const Map = () => {
   });
 
   // Prepare data for markers
-  const masterStop = data.filter((data) => data.restaurant_id ? true : false);
+  const masterStop = data.filter((data) => (data.restaurant_id ? true : false));
   const tourStops = masterStop.map((item, index) => ({
     position: {
       lat: parseFloat(item.latitude),
@@ -60,12 +70,11 @@ const Map = () => {
     title: item.Name,
     address: item.Full_Address,
     url: item.URL,
-    cost: item["Cost for two"] ? item["Cost for two"] : '',
+    cost: item["Cost for two"] ? item["Cost for two"] : "",
     cat: item.filter_category,
     cuisine: item.Cuisine,
     master: item.restaurant_id ? true : false,
   }));
-
 
   const filteredMarkers = catData.filter((marker) => {
     if (activeMarker) {
@@ -77,7 +86,9 @@ const Map = () => {
       );
 
       // Check if the marker is within any of the selected radii and does not have the master property
-      return selectedRadius.some((radius) => distance <= radius) && !marker.master;
+      return (
+        selectedRadius.some((radius) => distance <= radius) && !marker.master
+      );
     }
     return false;
   });
@@ -99,18 +110,16 @@ const Map = () => {
   // Marker click handler
   const handleMarkerClick = (marker) => {
     if (!marker.master) {
-      return
+      return;
     }
-    dispatch(SET_SELECTED_RADIUS([]))
-    dispatch(SET_ACTIVE_MARKER(marker))
-    setCircleDataInfo(true)
-    setShowInfo(true)
-    setCheckTear(false)
+    dispatch(SET_SELECTED_RADIUS([]));
+    dispatch(SET_ACTIVE_MARKER(marker));
+    setCircleDataInfo(true);
+    setShowInfo(true);
+    setCheckTear(false);
     // Create or update the circle when a marker is clicked
     if (showInfo || circleDataInfo) {
-
       const newCircle = (
-
         <Circle
           key={marker.title} // Use a unique key based on marker info
           center={marker.position}
@@ -125,7 +134,7 @@ const Map = () => {
         />
       );
       // Set the active circle
-      setActiveCircle(newCircle)
+      setActiveCircle(newCircle);
     }
   };
   // Close InfoWindow without clearing the selectedRadius
@@ -147,13 +156,10 @@ const Map = () => {
 
   // Close InfoWindow without clearing the selectedRadius
 
-
-
-
   const handleCloseInfoWindow = () => {
     // dispatch(SET_ACTIVE_MARKER(null))
     setShowInfo(false);
-    setCircleDataInfo(false)
+    setCircleDataInfo(false);
   };
   // Filter click handler
   const handleFilterClick = (e) => {
@@ -184,48 +190,44 @@ const Map = () => {
     setCheck(updatedCheck);
     setCatData(filteredData);
   };
-  console.log(activeArea)
+  console.log(activeArea);
   useEffect(() => {
     if (activeArea) {
       const coordinates = [];
-      ZoneData.forEach(zone => {
-        const cordinates = []
+      ZoneData.forEach((zone) => {
+        const cordinates = [];
         if (zone.value === activeArea) {
           if (zone.zoneDetail.coordinates.length > 1) {
-            zone.zoneDetail.coordinates.map(cordinatess => {
-              cordinates.push(...cordinatess)
-            })
-            coordinates.push(...cordinates)
+            zone.zoneDetail.coordinates.map((cordinatess) => {
+              cordinates.push(...cordinatess);
+            });
+            coordinates.push(...cordinates);
           } else {
             coordinates.push(...zone.zoneDetail.coordinates);
           }
         } else {
-
-          zone.children.forEach(circle => {
-            const cordinates = []
+          zone.children.forEach((circle) => {
+            const cordinates = [];
 
             if (circle.value === activeArea) {
-              circle.children.forEach(ward => {
-
+              circle.children.forEach((ward) => {
                 if (ward.coordinates.length > 1) {
-                  const tempArr = []
-                  tempArr.push(...ward.coordinates)
-                  const tempAr2 = []
+                  const tempArr = [];
+                  tempArr.push(...ward.coordinates);
+                  const tempAr2 = [];
                   cordinates.push(...tempAr2);
                 } else {
                   cordinates.push(...ward.coordinates);
                 }
-
               });
-            }
-            else {
-              circle.children.forEach(ward => {
+            } else {
+              circle.children.forEach((ward) => {
                 if (ward.value === activeArea) {
                   coordinates.push(...ward.coordinates);
                 }
               });
             }
-            coordinates.push(...cordinates)
+            coordinates.push(...cordinates);
           });
         }
       });
@@ -238,81 +240,186 @@ const Map = () => {
         return outputCoordinates;
       }
       if (coordinates.length > 1) {
-
-        const zoneCordinates = []
-        coordinates.map(cordinates => {
+        const zoneCordinates = [];
+        coordinates.map((cordinates) => {
           const convertedCoordinates = convertCoordinates(cordinates);
           zoneCordinates.push(convertedCoordinates);
-        })
+        });
         setHighLightedArea([zoneCordinates]);
-
       } else {
-
         const convertedCoordinates = convertCoordinates(...coordinates);
         setHighLightedArea([convertedCoordinates]);
       }
     } else {
       setHighLightedArea([]);
     }
-
   }, [activeArea]);
   const color_codes = [
-    "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF",
-    "#00FFFF", "#800000", "#008000", "#000080", "#808000",
-    "#800080", "#008080", "#C0C0C0", "#808080", "#999999",
-    "#FFA07A", "#FA8072", "#E9967A", "#F08080", "#FF6347",
-    "#FF4500", "#FFD700", "#DAA520", "#FF8C00", "#FFA500",
-    "#FFDAB9", "#FFE4B5", "#FFE4E1", "#F5DEB3", "#FFF8DC",
-    "#F0E68C", "#BDB76B", "#ADFF2F", "#7FFF00", "#7CFC00",
-    "#008000", "#008080", "#00FFFF", "#4682B4", "#87CEEB",
-    "#87CEFA", "#B0C4DE", "#1E90FF", "#6495ED", "#4169E1",
-    "#0000CD", "#00008B", "#0000FF", "#8A2BE2", "#9932CC",
-    "#9400D3", "#8B008B", "#800080", "#4B0082", "#6A5ACD",
-    "#483D8B", "#7B68EE", "#9370DB", "#8B008B", "#9400D3",
-    "#9932CC", "#BA55D3", "#800080", "#9370DB", "#DDA0DD",
-    "#DA70D6", "#FF00FF", "#FF69B4", "#FF1493", "#FFC0CB",
-    "#FFB6C1", "#FFA07A", "#FA8072", "#E9967A", "#D2691E",
-    "#CD5C5C", "#DC143C", "#B22222", "#8B0000", "#A52A2A",
-    "#A52A2A", "#8B0000", "#B22222", "#DC143C", "#CD5C5C",
-    "#D2691E", "#E9967A", "#FA8072", "#FFA07A", "#FFB6C1",
-    "#FFC0CB", "#FF1493", "#FF69B4", "#FF00FF", "#DA70D6",
-    "#DDA0DD", "#9370DB", "#800080", "#BA55D3", "#9932CC",
-    "#9400D3", "#8B008B", "#800080", "#4B0082", "#6A5ACD",
-    "#483D8B", "#7B68EE", "#0000FF", "#00008B", "#0000CD",
-    "#4169E1", "#6495ED", "#1E90FF", "#B0C4DE", "#87CEFA",
-    "#87CEEB", "#4682B4", "#00FFFF", "#008080", "#008000",
-    "#7CFC00", "#7FFF00", "#ADFF2F", "#BDB76B", "#F0E68C",
-    "#FFF8DC", "#F5DEB3", "#FFE4E1", "#FFE4B5", "#FFDAB9",
-    "#FFA500", "#FF8C00", "#FFD700", "#FF4500", "#FF6347",
-    "#F08080", "#E9967A", "#FA8072", "#FFA07A", "#0000FF",
-    "#00FF00", "#FF0000"
-  ]
-  //   {
-  //     "lat": 17.4398034224,
-  //     "lng": 78.4482900426
-  // }
-
+    "#FF0000",
+    "#00FF00",
+    "#0000FF",
+    "#FFFF00",
+    "#FF00FF",
+    "#00FFFF",
+    "#800000",
+    "#008000",
+    "#000080",
+    "#808000",
+    "#800080",
+    "#008080",
+    "#C0C0C0",
+    "#808080",
+    "#999999",
+    "#FFA07A",
+    "#FA8072",
+    "#E9967A",
+    "#F08080",
+    "#FF6347",
+    "#FF4500",
+    "#FFD700",
+    "#DAA520",
+    "#FF8C00",
+    "#FFA500",
+    "#FFDAB9",
+    "#FFE4B5",
+    "#FFE4E1",
+    "#F5DEB3",
+    "#FFF8DC",
+    "#F0E68C",
+    "#BDB76B",
+    "#ADFF2F",
+    "#7FFF00",
+    "#7CFC00",
+    "#008000",
+    "#008080",
+    "#00FFFF",
+    "#4682B4",
+    "#87CEEB",
+    "#87CEFA",
+    "#B0C4DE",
+    "#1E90FF",
+    "#6495ED",
+    "#4169E1",
+    "#0000CD",
+    "#00008B",
+    "#0000FF",
+    "#8A2BE2",
+    "#9932CC",
+    "#9400D3",
+    "#8B008B",
+    "#800080",
+    "#4B0082",
+    "#6A5ACD",
+    "#483D8B",
+    "#7B68EE",
+    "#9370DB",
+    "#8B008B",
+    "#9400D3",
+    "#9932CC",
+    "#BA55D3",
+    "#800080",
+    "#9370DB",
+    "#DDA0DD",
+    "#DA70D6",
+    "#FF00FF",
+    "#FF69B4",
+    "#FF1493",
+    "#FFC0CB",
+    "#FFB6C1",
+    "#FFA07A",
+    "#FA8072",
+    "#E9967A",
+    "#D2691E",
+    "#CD5C5C",
+    "#DC143C",
+    "#B22222",
+    "#8B0000",
+    "#A52A2A",
+    "#A52A2A",
+    "#8B0000",
+    "#B22222",
+    "#DC143C",
+    "#CD5C5C",
+    "#D2691E",
+    "#E9967A",
+    "#FA8072",
+    "#FFA07A",
+    "#FFB6C1",
+    "#FFC0CB",
+    "#FF1493",
+    "#FF69B4",
+    "#FF00FF",
+    "#DA70D6",
+    "#DDA0DD",
+    "#9370DB",
+    "#800080",
+    "#BA55D3",
+    "#9932CC",
+    "#9400D3",
+    "#8B008B",
+    "#800080",
+    "#4B0082",
+    "#6A5ACD",
+    "#483D8B",
+    "#7B68EE",
+    "#0000FF",
+    "#00008B",
+    "#0000CD",
+    "#4169E1",
+    "#6495ED",
+    "#1E90FF",
+    "#B0C4DE",
+    "#87CEFA",
+    "#87CEEB",
+    "#4682B4",
+    "#00FFFF",
+    "#008080",
+    "#008000",
+    "#7CFC00",
+    "#7FFF00",
+    "#ADFF2F",
+    "#BDB76B",
+    "#F0E68C",
+    "#FFF8DC",
+    "#F5DEB3",
+    "#FFE4E1",
+    "#FFE4B5",
+    "#FFDAB9",
+    "#FFA500",
+    "#FF8C00",
+    "#FFD700",
+    "#FF4500",
+    "#FF6347",
+    "#F08080",
+    "#E9967A",
+    "#FA8072",
+    "#FFA07A",
+    "#0000FF",
+    "#00FF00",
+    "#FF0000",
+  ];
   function stripWard(inputString) {
     // Define a regular expression pattern to match the ward number (e.g., Ward5)
     const wardPattern = /\bWard\d+\b/g;
 
     // Use the replace method to replace the ward pattern with an empty string
-    const result = inputString.replace(wardPattern, '').trim();
+    const result = inputString.replace(wardPattern, "").trim();
 
     return result;
   }
-  let wardPin
+  let wardPin;
   if (activeWard) {
     wardPin = {
       position: {
-        "lat": activeWard.lat,
-        "lng": activeWard.lng
+        lat: activeWard.lat,
+        lng: activeWard.lng,
       },
       title: stripWard(activeWard.ward),
-      cat: 'ward',
-      population: activeWard.population
-    }
+      cat: "ward",
+      population: activeWard.population,
+    };
   }
+
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMap
@@ -329,11 +436,9 @@ const Map = () => {
           ],
         }}
       >
-
         {tourStops && (
           <MarkerClusterer>
             {() => {
-
               return (
                 <>
                   {tourStops.map((stop, index) => (
@@ -342,7 +447,6 @@ const Map = () => {
                       onMouseOver={() => handleMarkerHover(stop)}
                       onMouseOut={() => handleMarkerOut(stop)}
                       onClick={() => handleMarkerClick(stop)}
-
                       position={stop.position}
                       title={`${stop.title} ${stop.address}`}
                       icon={{
@@ -350,18 +454,16 @@ const Map = () => {
                           stop.cat === "restaurants"
                             ? restaurants
                             : stop.cat === "entertainment"
-                              ? Entertainment
-                              : stop.cat === "offices"
-                                ? Work
-                                : stop.cat === "schools"
-                                  ? Educational
-                                  : restaurants, // Use your custom marker icon
+                            ? Entertainment
+                            : stop.cat === "offices"
+                            ? Work
+                            : stop.cat === "schools"
+                            ? Educational
+                            : restaurants, // Use your custom marker icon
                         scaledSize: new window.google.maps.Size(30, 35), // Adjust size if needed
                       }}
-
                     />
                   ))}
-
                 </>
               );
             }}
@@ -378,37 +480,38 @@ const Map = () => {
             onMouseOver={() => handleMarkerHover(stop)}
             onClick={() => handleMarkerClick(stop)}
             onMouseOut={() => handleMarkerOut(stop)}
-
             title={stop.title}
             icon={{
               url:
                 stop.cat === "restaurants"
                   ? restaurants
                   : stop.cat === "entertainment"
-                    ? Entertainment
-                    : stop.cat === "offices"
-                      ? Work
-                      : stop.cat === "schools"
-                        ? Educational
-                        : restaurants, // Use your custom marker icon
+                  ? Entertainment
+                  : stop.cat === "offices"
+                  ? Work
+                  : stop.cat === "schools"
+                  ? Educational
+                  : restaurants, // Use your custom marker icon
               scaledSize: new window.google.maps.Size(25, 30), // Adjust size if needed
             }}
           />
         ))}
 
         {/* ward Data */}
-        {activeWard && <Marker
-          key={'dfdsfsdfafcsdv'}
-          position={wardPin.position}
-          onMouseOver={() => handleMarkerHover(wardPin)}
-          onClick={() => handleMarkerClick(wardPin)}
-          onMouseOut={() => handleMarkerOut(wardPin)}
-          title={wardPin.title}
-          icon={{
-            url: wardPinImage,
-            scaledSize: new window.google.maps.Size(35, 40), // Adjust size if needed
-          }}
-        />}
+        {activeWard && (
+          <Marker
+            key={"dfdsfsdfafcsdv"}
+            position={wardPin.position}
+            onMouseOver={() => handleMarkerHover(wardPin)}
+            onClick={() => handleMarkerClick(wardPin)}
+            onMouseOut={() => handleMarkerOut(wardPin)}
+            title={wardPin.title}
+            icon={{
+              url: wardPinImage,
+              scaledSize: new window.google.maps.Size(35, 40), // Adjust size if needed
+            }}
+          />
+        )}
 
         {/* InfoWindow */}
 
@@ -424,8 +527,9 @@ const Map = () => {
             cost={currentMarker.cost}
             cuisine={currentMarker.cuisine}
           />
-        ) : <></>
-        }
+        ) : (
+          <></>
+        )}
         {showInfo && activeMarker && !currentMarker && circleDataInfo ? (
           <InfoWindows
             position={activeMarker.position}
@@ -436,22 +540,22 @@ const Map = () => {
             cost={activeMarker.cost}
             cuisine={activeMarker.cuisine}
           />
-        ) : <></>
-        }
+        ) : (
+          <></>
+        )}
 
         {activeArea && (
           <>
             {highLightedArea.map((polygonCoordinates, index) => {
               if (Array.isArray(...polygonCoordinates)) {
-
                 return polygonCoordinates.map((cordinate, index) => {
-                  console.log(cordinate)
+                  console.log(cordinate);
                   return (
                     <Polygon
                       key={index}
                       paths={cordinate}
                       options={{
-                        strokeColor: '#fff', // Outline color
+                        strokeColor: "#fff", // Outline color
                         strokeOpacity: 0.8,
                         strokeWeight: 3,
                         fillColor: color_codes[index], // Fill color (use the same color as outline)
@@ -459,7 +563,7 @@ const Map = () => {
                       }}
                     />
                   );
-                })
+                });
               } else {
                 return (
                   <Polygon
@@ -478,19 +582,22 @@ const Map = () => {
             })}
           </>
         )}
-        <Sidebar SidebarData={<Controllers
-          activeMarker={activeMarker}
-          selectedRadius={selectedRadius}
-          setActiveCircle={setActiveCircle}
-          checkTear={checkTear} setCheckTear={setCheckTear}
-          handleFilterClick={handleFilterClick}
-        />} />
-
+        <Sidebar
+          SidebarData={
+            <Controllers
+              activeMarker={activeMarker}
+              selectedRadius={selectedRadius}
+              setActiveCircle={setActiveCircle}
+              checkTear={checkTear}
+              setCheckTear={setCheckTear}
+              handleFilterClick={handleFilterClick}
+            />
+          }
+        />
 
         {/* Filters */}
-
-      </GoogleMap >
-    </div >
+      </GoogleMap>
+    </div>
   );
 };
 
