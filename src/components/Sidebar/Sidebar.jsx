@@ -7,7 +7,7 @@ import { Checkbox, Divider } from "antd";
 import TreeSelectComponent from "./../TreeSelectComponent/TreeSelectComponent";
 import { useState } from "react";
 
-const Sidebar = ({ SidebarData }) => {
+const Sidebar = ({ SidebarData, zoneData }) => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   return (
     <>
@@ -52,7 +52,7 @@ const Sidebar = ({ SidebarData }) => {
             Search <br /> Ward , Zone and Circles
           </p>
 
-          <TreeSelectComponent />
+          <TreeSelectComponent zoneData={zoneData} />
           <p className="headerSidebar">Platforms</p>
           <div style={{ display: "flex", gap: "0.5em", paddingTop: "1em" }}>
             <Checkbox defaultChecked disabled />

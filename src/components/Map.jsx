@@ -14,7 +14,7 @@ import Entertainment from "./../assets/Entertainment.svg";
 import Educational from "./../assets/Educational.svg";
 import restaurants from "./../assets/restaurants.svg";
 import wardPinImage from "./../assets/ward.svg";
-import ZoneData from "./../Api/TreeData2.json";
+// import ZoneData from "./../Api/TreeData2.json";
 import { data } from "../Api/data.js";
 import Controllers from "./Controllers";
 import InfoWindows from "./InfoWindows";
@@ -29,9 +29,25 @@ import {
   SET_SELECTED_RADIUS,
 } from "./../Api/slice";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const Map = () => {
   const [map, setMap] = useState(null);
+  const [ZoneData, setZoneData] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        let response = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/api/getData`
+        );
+        setZoneData(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData(); // Call the async function
+  }, []);
+
   const [activeCircle, setActiveCircle] = useState(null);
   const [catData, setCatData] = useState(data);
   const [circleDataInfo, setCircleDataInfo] = useState(false);
@@ -190,6 +206,7 @@ const Map = () => {
     setCheck(updatedCheck);
     setCatData(filteredData);
   };
+
   console.log(activeArea);
   useEffect(() => {
     if (activeArea) {
@@ -419,6 +436,7 @@ const Map = () => {
       population: activeWard.population,
     };
   }
+  console.log(import.meta.env.VITE_BASE_URL + "/api/getData"); // 123
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>
@@ -593,6 +611,7 @@ const Map = () => {
               handleFilterClick={handleFilterClick}
             />
           }
+          zoneData={ZoneData}
         />
 
         {/* Filters */}
